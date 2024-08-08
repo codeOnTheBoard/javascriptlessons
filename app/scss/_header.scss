@@ -1,0 +1,51 @@
+.header-fon,
+.header-row {
+  min-height: 500px;
+  background: #d9d7d0;
+}
+
+.header-row {
+  display: flex;
+  place-content: center center;
+  text-align: center;
+}
+
+.header-title {
+  display: inline-block;
+  margin-bottom: 40px;
+  color: #000000;
+  font-size: 40px;
+  text-align: center;
+}
+
+.header-p {
+  font-size: 12px;
+}
+
+.block-section {
+  padding: 50px 0;
+}
+
+.block-title {
+  display: block;
+  width: 100%;
+  margin-bottom: 40px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.block-content {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+}
+
+.div-cont {
+  display: flex;
+  justify-content: space-between;
+}
+
+.div-cont-child {
+  width: 33%;
+  border: 1px solid #000000;
+}
