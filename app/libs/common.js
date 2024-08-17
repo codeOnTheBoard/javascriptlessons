@@ -612,6 +612,878 @@ document.addEventListener('DOMContentLoaded', () => {
   showHelloUser3(Piter);
   // https://www.youtube.com/watch?v=2Vuz_qvwnqo&list=PLvcCyIZOok9JiXExkbCTGTduUXtrkorkS&index=23 7
 
+  //!Нoisting всплитие механизм в JS при котором перемение через слово var и функции как Function Declaration,инициализуруются перед виполнением кода скрипта
+  // переменние инициализируемие через var инициализируются со значением undefined
+  // функции инициализируются со значением тоесть с телом, которое било определено при обявлении функции
+  // вспливают пепемение но не присвоение ей функции
+
+  // визвать / использовать переменую через var
+  // присвоить переменной значение без ее обьявления
+  // визвать повторно / использовать переменую через var -
+  // обьявить переменнную через var без присвоения ей значения
+  console.log('var до обьявления до присвоения значения :', nummmm);
+  nummmm = 254;
+  console.log('var до обьявления после присвоения значения :', nummmm);
+  var nummmm;
+  //! Немедленно визіваемая функция( immediatly invoked function Expression IIFE)
+  //круглие скобки вокруг функции
+  // !   (function () {.....})();
+  //круглие скобки вокруг всего виражения
+  // !   (function () {.....}());
+  //  вирпажение начинается с догического оператора НЕ
+  // !    !function () {.....}();
+  //  вирпажение начинается с унарного плюса +
+  // !    +function () {.....}();
+
+  // ! Сallback function (обратний визов) єто функция переданная в другую функцию в качестве аргумента, которая затем визивается по завершению какого-то действия
+
+  // приписиваю callback функцию
+  function callBackFunk() {
+    // console.log('Hello from Callback Function');
+    console.log(true);
+  }
+
+  // приписіваю функцию в которой будет визиватья callback
+  function getResult(expr, callback) {
+    /// если правда виполни функцию
+    if (expr) callback();
+  }
+
+  getResult(2 > 1, callBackFunk);
+
+  // ! JavaScript: Базовый курс для фронтенд-разработчиков. Урок 11 - Домашнее задание
+  /**
+   * 1 FE создать функцию getCar(county) которая принимает 3 знкачения USA Germany Japan
+   * и возхвращает в зависимости от такие значения Tesla Mersedes Toyota пример getCar('Japan') Tayota
+   *
+   * 2 Af checkNumber(x) в зависимсолти  от переданого аргумента х возвращает фразу четное число или нечетное число
+   * 3 AF calcExponent(x,y) которая возвращает число х возведеную в степень y
+   * Пример  calcExponent(2,3) резльтат 8
+   *
+   *
+   */
+  // ! JavaScript: Базовый курс для фронтенд-разработчиков. Урок 12 - Объекты (основы)
+  /**
+   * Обьект тип данних со сложной структурой, которой позволдяет хранить множество раздичніх значений
+   *
+   */
+
+  const user = {
+    // ключ : значение
+    name: 'Alex',
+    age: 23,
+    adress: {
+      'zip-code': 'jklj',
+      city: 'New-York',
+      street: '5 Avenu',
+      building: 233,
+    },
+  };
+  console.log(user);
+  console.log(user.age); // если свойсвто состоит из одного слова
+  console.log(user['age']); // если свойсвто состоит из одного слова или из нескольких слов
+
+  console.log('Создание пустого обекта и добавления свойств');
+
+  const companyName = {};
+  companyName.name = 'Dream company';
+  companyName['foudation year'] = 2021;
+
+  console.log(companyName);
+  console.log('Изменение свойств обьекта');
+  companyName.name = 'Target company';
+  console.log(companyName);
+
+  console.log('Удаление свойств обьекта');
+  delete companyName['foudation year'];
+  console.log(companyName);
+
+  // Проверка существавания свойств
+  console / log('name' in user); //true
+  console / log('education' in user); //false
+  console / log(user.education); //undefined
+  // перебор свойст обекта
+  for (let key in user) {
+    console.log(`${key} : ${user[key]}`);
+  }
+  // методи обекта
+
+  const cat = {
+    name: 'Kity',
+    'born year': 2024,
+    sayHello: function () {
+      console.log('мґу');
+    },
+    sayHalo() {
+      console.log('вуф');
+    },
+  };
+  cat.sayHello();
+  /** методи обектов функции записаннии в качестве значений свойств обекта и совершающие с ним какие то действия
+   * https://www.youtube.com/watch?v=n4Fp-WzWMB4&list=PLvcCyIZOok9JiXExkbCTGTduUXtrkorkS&index=25
+   * потрібно буде розібратися якщо буде потрібно   *
+   */
+
+  // !JavaScript: Базовый курс для фронтенд-разработчиков. Урок 12 - Домашнее задание
+  // https://www.youtube.com/watch?v=N5afvPPX6fw&list=PLvcCyIZOok9JiXExkbCTGTduUXtrkorkS&index=26
+  /** зробити якщо зрорзумію */
+  // !  JavaScript: Базовый курс для фронтенд-разработчиков. Урок 13 - DOM API: Объектная модель документа
+  // структура мтодов обекта HTML-елементи, текстовие узли, комментарии
+  /**
+   * DOM обектная модель документа, которая представляет все содержимое веб страници в виде обектов
+   * совокупность єтих обекто которіе назіваются узлами, образуют DOM дерево: HTML елементи с переносами, текстовие узли, комментарии
+   *
+   * верхние елементи дерева
+   * console.log(document.Element) document точка входа в  DOM
+   * HEAD
+   * console.log(document.head)
+   * BODY
+   * console.log(document.body)
+   *
+   * ! Cвойства доступа к узлам
+   * fistChild - первий дочерний
+   * lastChild - последний дочерний
+   * childNodes - все дочерние
+   * parentNode - родительский
+   * nextSibling - следующий соседний
+   * previousSibling - предидущий соседний
+   */
+  /**
+   * ! дочерние узли
+   *
+   * body.firstChild
+   * body.lastChild
+   * body.childNodes
+   *
+   * ! родительский узел
+   *
+   * body.parentNodoe
+   *
+   * ! соседние узли
+   *
+   * body.nextSibling
+   * body.previousSibling
+   *
+   * ! Коллекция узлов
+   */
+
+  const bodyChildNodes = body.childNodes;
+  console.log(bodyChildNodes[0]);
+  console.log(bodyChildNodes.length);
+  for (let node of bodyChildNodes) {
+    console.log('body Child Nodes: ', node);
+  }
+  /**
+   * ! Свойства доступа к елементам
+   *
+   * fistElementChild первий джечерний
+   * lastElementChild - последний дочерний
+   * children   все дочерние
+   * parentElement родительский
+   * nextElementSibling следующий соседний
+   * previousElementSibling предідущий соседний
+   *
+   */
+  // ! Свойства доступа к елементам без текстових узлов HTML коллекции
+  // ! Дочерний елемент
+
+  console.log('body fist Element Child: ', bode.fistElementChild);
+  console.log('body fist Element Child: ', bode.lastElementChild);
+  console.log('body fist Element Child: ', bode.children);
+  console.log('body fist Element Child: ', bode.parentElement);
+  console.log('body fist Element Child: ', bode.nextElementSibling);
+  console.log('body fist Element Child: ', bode.previousElementSibling);
+
+  // ! JavaScript: Базовый курс для фронтенд-разработчиков. Урок 13 - Домашнее задание
+  /**
+   * побегать по узлам вивести их в консоль
+   */
+  // ! JavaScript: Базовый курс для фронтенд-разработчиков. Урок 14. DOM API: Методы поиска элементов
+  /**
+   * querySelector() - вибирает статическую коллекцию елементов которая не обновляется при изменениии елементов на странице
+   * querySelectorAll()
+   * getElementById() - вибирает динамическую коллекцию елементов которая обновляется при изменениии елементов на странице
+   * getElementsByName()
+   * getElementsByTagName()
+   * getElementsByClassName()
+   */
+
+  /**
+   * ! Дополнительние методи обекта Element
+   *
+   * closest(selector) - ищет ближайшего предка которий соответсвует CSS cелектору selector,
+   * contains(elem) - проверяет содеоржит ли елемент другой елемент elem Возвращает true false
+   * matches(selector) - проверяет удовлетворяет ли елемент CSS селектору selector Возвращает true false
+   *
+   */
+
+  //  closest
+  const card0Text = card[0].querySelector('.card-text');
+  console.log(card0Text.closest('.card'));
+  console.log(heading1.matches('.py-3'));
+  console.log(heading1.matches('[disabled]'));
+
+  // !JavaScript: Базовый курс для фронтенд-разработчиков. Урок 14 - Домашнее задание
+
+  /**
+   * вібрати заголовок Homework-14 блока вивести його в консоль проверитоь что каждий елемент списка имеет класс list-group-item если какой-то
+   * елемент не имеет такого класса в консоль вивести соолщение номер елемента не имеет класс list-group-item
+   *
+   * для всех елементов списка проверить что кардий из них имеет родителя с классом list-group
+   *
+   */
+  // ! JavaScript: Базовый курс для фронтенд-разработчиков. Урок 15. DOM API: Свойства узлов, атрибуты
+
+  /**
+   * div id="card" class="card"
+   * const card = document.querySelector('.card');
+   * работа с обектом card
+   * concole.log(typeof card)
+   * concole.log(card.nodeType)
+   * concole.log('nodeType' in card)
+   * все типи DOM узлов предсатвляют собой обекти поєтому с ними можно работаь так же как и с другими обектами JS
+   *
+   *
+   * const emailWrapper = document.querySelectorAll('form .mb-3')[0];
+   * const emailInput = document.getElementById('email');
+   * const emailLabelText = emailWrapper.querySelector('[for="email"]').fistChild;
+   *
+   *   console.log(DOM-узли - єто обьекти);
+   *
+   *   console.log(typeof emailInput);
+   *   console.log(emailInput.nodeType);// повертає числовий код типу вузла
+   *   console.log('nodeType' in emailInput);
+   *   console.log(emailInput);
+   *   console.dir(emailInput);
+   *
+   *   console.log(TextNode свойства);
+   *
+   *   console.log(emailLabelTex.nodeValue);
+   *   console.log(emailLabelTex.length);
+   *
+   *   console.log(***Element свойства);
+   *
+   *   console.log(emaiWrapper.tagName);
+   *   console.log(emaiWrapper.innerHTML);
+   *   console.log(emaiWrapper.outerHTML);
+   *   console.log(emaiWrapper.innerText);
+   *
+   */
+
+  /**
+   * ! Общие свойства узлов
+   *
+   * fistChild/lastChild/childNodes              дочерние узли
+   * parentNode/parentElement                    родительский узел/елемент
+   * nextSibling/previousSibling                 соседние вузлі
+   * nextElementSibling/previousElementSibling   соседние елементи
+   * nodeType                                    тип узла(числовой код)
+   * nodeName                                    название узла
+   * textContent                                 текстовое содержимое узла
+   *
+   * ! Общие свойства текстових узлов
+   *
+   * nodeValue     содержимое текстового вузла
+   * data          содержимое текстового вузла
+   * wholeText     текст усіх смежних текстових вузлів, що звязані з вказаним вузлом
+   * lenght        довжина строчки
+   *
+   * ! Общие свойства вузлів-елементів
+   *
+   * tagName     назва тега елемента
+   * innerHTML   HTML содержимое елемента
+   * outerHTML   HTML содержимое та сам елемент
+   * innerText   текст елемениту
+   *
+   * ! Cвойства, соответсующие глобальним арибутам
+   *
+   * іd               текст елемениту
+   * hidden           видимість елементу
+   * title            інформація про елемент
+   * tabindex         таб-індекс елементу
+   * style            інлайн-стиль елементу
+   * className        класс елементу
+   * dataset          набор data-атрибутов
+   *
+   * ! Cвойства, соответсующие глобальним арибутам
+   *
+   * іd               текст елемениту
+   * hidden           видимість елементу
+   * title            інформація про елемент
+   * tabindex         таб-індекс елементу
+   * style            інлайн-стиль елементу
+   * className        класс елементу
+   * dataset          набор data-атрибутов
+   *
+   * console.log(***Свойства-атрибути);
+   *
+   *   console.log(emailInpit.id);
+   *   console.log(emailInpit.name);
+   *   console.log(emailInpit.title);
+   *   console.log(emailInpit.className);
+   *   console.log(emailInpit.type);// only for input
+   *
+   * console.log(***Методи доступа к HTML атрибутам);
+   *
+   * getAttribute(name)          отримує значення атрибуту
+   * setAttribute(name, value)   встановлює значення атрибуту
+   * hasAttribute(name)          перевіряє наявність атрибуту
+   * removeAttribute(name)       видаляє атрибут
+   *
+   * console.log(***Доступ до HTML атрибутам);
+   *
+   * console.log(emailInpit.hasAttribute('title'));
+   * console.log(emailInpit.getAttribute('title'));
+   * console.log(emailInpit.setAttribute('title','Email'));
+   *
+   * Перебор атрибутов
+   * const emailInputAttributes = emailInput.attributes;
+   * for( let attr of emailInputAttributes ) {
+   * console.log(`${ attr.name } : ${ attr.value }`)
+   * }
+   *
+   * console.log(****data-атрибути***));
+   *
+   * const emailInputDataSet = emailInput.dataset;
+   *
+   * console.log('data-status ', emailInputDataSet.status);
+   *
+   *
+   * console.log(**** Синхронизация атрибутов и свойств ***));
+   *
+   * emailInput.name = 'new email'; // сменяю на новое имя
+   * console.log('Name property ', emailInput.name);
+   * console.log('Name attribute ', emailInput.getAttribute('name');
+   *
+   * emailInput.setAttribute('value','email');
+   * emailInput.value('new-email');
+   * console.log('Value property ', emailInput.value);
+   * console.log('Value attribute ', emailInput.getAttribute('value');
+   */
+
+  // ! JavaScript: Базовый курс для фронтенд-разработчиков. Урок 15 - Домашнее задание
+
+  /**
+   *прочитать свойства блока Homework-15, class id поменять title текстовое наповнення
+   */
+
+  // ! JavaScript: Базовый курс для фронтенд-разработчиков. Урок 16. DOM API: Стили и классы элементов
+
+  /**
+   * ! style property
+   * single declaration
+   * const titleT = document.querySelector('.title-t')
+   * titleT.style.marginTop='50px'
+   *
+   * multiple declaration
+   * const sintanceT = document.querySelector('p:nth-of-type(2)')
+   *
+   * sintanceT.style.cssText= `
+   *  border:1px solid #121212;
+   * border-radius:3px;
+   *                       `
+   * sintanceT.style.cssText += `
+   *   border-color:'#212121';
+   *   background-color:'#212121';
+   *                            `
+   * sintanceT.style.cssText += `
+   *         background-color:''; // видалити свойство
+   *                            `
+   * Отримання правдивого значення css свойства background-color для елементу sintanceT
+   * console.log(getComputedStyle(sintanceT).backgroundColor);
+   *
+   * console.log(***getComputedStyle метод ****);
+   * const fistAlert = document.querySelectorAll('.alert)[0];
+   * console.log('1st alert background color(style property): ', fistAlert.style.backgroundColor);
+   * console.log('1st alert background color(getComputedStyle method): ', getComputedStyle(fistAlert).backgroundColor);
+   *
+   * className - содржит названия всех классов, примененних к елементу и записаних в атрибуте class
+   * свойсво classList позволяет добавлять или удалять отдельние класси елементи
+   *
+   * список классов хранящихся в обьекте сволйства classList можно перебрать при помощи цикла for... of
+   *
+   * const card = querySelector('.card')
+   * console.log(card.className) список классов
+   * card.classList.add('card-prrimary')
+   *
+   * add(class) - -добавляет класс
+   * remove(class) - видаляє клас
+   * toggle(class) - переключає клас добавляє клас якщо його немає видаляе - якщо є
+   * cantains(class) перевіряє наявність класу
+   *
+   * const secondAlert = querySelectorAll('.alert')[1];
+   * secondAlert.classList.remove('.alert-s');
+   * secondAlert.classList.add('.alert-se');
+   * secondAlert.classList.contains('.alert-se');
+   *
+   *  перебор класса елементу secondAlert
+   * for(let className of secondAlert.classList) {
+   * console.log('class list of 2nd alert: ' , classname);
+   * }
+   *
+   */
+
+  // !  JavaScript: Базовый курс для фронтенд-разработчиков. Урок 16 - Домашнее задание
+  /**
+  проработать добавление классов и инлайна
+
+  */
+
+  // ! JavaScript: Базовый курс для фронтенд-разработчиков. Урок 17. DOM API: Изменение документа
+
+  /**
+   * створення вузлів
+   * const div = document.createElement('div');
+   * const textNode = document.createTextDode('text');
+   * const textNode = document.createTextDode('text');
+   * const comment = document.createComment('comment');
+   *
+   * батьківський елемент
+   * const row = document.querySelector('.row');
+   *
+   * створення вузлів
+   * const cardWrapper = document.createElement('div');
+   *cardWrapper.className = 'col-4';
+   * const card1Content = document.createTextNode('Текст которий я бажаю вставити в тег');
+   * const comment = document.createComment('New comment');
+   *
+   * ! Методи обекта Element для вставки вузлів
+   * insertAdjacentText(where, text) - добавить текстовий узел в положение where относительно елемента
+   * insertAdjacentElement(where, el) -  добавить елемент в положение where относительно елемента
+   * insertAdjacentHTML(where, html) -  добавить HTML-разметку html d положение where относительно елемента
+   *
+   * where:
+   * beforebegin - перед елементом
+   * afterbegin - начало елемента
+   * beforeend - конец елемент
+   * afterend - после елемента
+   *
+   * Вставка вузлів
+   * row.insertAdjacentElement('afterbegin',card1Wrapper);
+   * card1Wrapper.insertAdjacentElement('afterbegin', card1);
+   * card1.insertAdjacentText('afterbegin', card1Content.textContent);
+   *
+   * ! сокращенние методи вставки узлов
+   *
+   * before(node) - перед елементу
+   * prepend(node) - начало елементу
+   * append(node) - конец елементу
+   * after(node) - после елемента
+   * replase(node) - в середину елементу з зміною старого содержимого
+   *
+   * Сокращенная методи вставки вузлів
+   *
+   * const card2Wrapper = document.createElement('div');
+   *card2Wrapper.className = 'col-4';
+
+   * const card2 = document.createelement('div');
+   * card2.className = 'alert alert-warning';
+   * card2.innerText = 'Cart';
+
+   * const comment1 = document.createComment('New comment');
+
+   * card2Wrapper.append(card2);
+   * row.append(card2Wrapper);
+   * row.prepend(comment2);
+   *
+   * метод клонирования
+   *
+   * const cart3 = document.querySelector('.card');
+   * const cart4 = cart3.cloneNode(true);
+   *
+   * cart4.innerText = 'Сфеклдл';
+   *
+   *
+   *
+   * card3Wrapper.insertAdjacentHTML('afterend', `
+   * <div class="suc"> Content </div>
+   * `)
+   *
+   * Обект DocumentFragment
+   * const fragment = new DocumentFragment();
+   * const ul = document.createElement('ul')
+   * ul.className = 'col-4 list-group'
+   *
+   * for(let i=1; i<=3; i++) {
+   * let li = document.createElement('li')
+   * li.className = 'liast-style';
+   * li.innerText = `Iner text ${i}`;
+   * fragment.append(li);
+   * }
+   * ul.append(fragment);
+   * document.querySelector('.container').append(ul)
+   *
+   *  Видалення вузлів
+   *
+   * document.querySelector('span').remove();
+   * ul.innerHTML = '';
+   *
+   */
+
+  //  ! JavaScript: Базовый курс для фронтенд-разработчиков. Урок 17 - Домашнее задание
+
+  /** створити копію елементів і декулькох вузлів */
+
+  // ! JavaScript: Базовый курс для фронтенд-разработчиков. Урок 18. DOM API: Браузерные события
+  // назначение обработчсиков собитий
+  // три обработчсика собитий
+  // onclick HTML атрибут
+  // свойства DOM обькта
+  // метод DOM обькта addEventListener() ; removeEventListener()
+
+  const btnSecondary = document.querySelector('.btn-secondary');
+  btnSecondary.onclick = seyHallooo;
+  function seyHallooo() {
+    console.log('Привети, МИр');
+  }
+
+  const btnSuccess = querySelector('.btn-success');
+  function getBtnSuccess() {
+    console.log('jjkkh h');
+  }
+  btnSuccess.addEventListener('click', getBtnSuccess);
+  btnSuccess.addEventListener('click', () => {
+    console.log('this in Event handle :', this); // виводе ко кнопки
+  });
+
+  const btnDanger = querySelector('.btn-danger');
+
+  function btnDangerhandler(event) {
+    console.log('Hello from Danger button!');
+    console.log('Event type! :', event.type);
+    console.log('Event currentTarget! :', event.currentTarget);
+  }
+
+  btnDanger.addEventListener('click', btnDangerhandler);
+  /** Щоб відмігнити роботу кнопки форми або лінка потрібно використовувати в початкау функції
+   *   const btn = querySelector('.btn');
+   *  btn.addEventListener('click', btn);
+   *  function btnDangerhandler(event) {
+   *     event.preventDefault();
+   * }
+   *
+   * або
+   *
+   *  btn.onclick = function (event) {
+   *      console.log('Link is blocked');
+   *      console.log('Default prevented :', event.defaultPrevented);
+   *     return false; // відміна роботи кнопки за замовчуванням
+   * }
+   *
+   */
+
+  // Метод preventDefault()
+
+  const btnSubmit = document.querySelector("[type='submit']");
+  function btnShandler(e) {
+    e.preventDefault();
+    console.log('Form submit is blocked');
+    console.log('Default prevented :', e.defaultPrevented);
+  }
+  btnSubmit.addEventListener('click', btnShandler);
+  // !  JavaScript: Базовый курс для фронтенд-разработчиков. Урок 19. DOM API: Погружение-всплытие событий
+
+  // свойство обекта HTMLTableElement(соответсвует тегу <table>);
+  /** Свойства елементіа таблиці
+   *  свойство                 опис
+   * row                коллекция строк <tr> таблиці
+   * caption            ссилка на название таблици <caption>
+   * tHead              ссилка на заголовок таблици <thead>
+   * tBodies            силка на коллекцию елементів <tbody> их может бить несколько
+   * tFoot              ссилка на подвал таблици <thead>
+   *
+   *  DOM Обект                    HTML-теги           Свойство                опис
+   * HTMLTableSectionElement  <thead> <tfoot> <tbody>     rows              колкекція строк секйції таблиці
+   * HTMLTableRowElement      <tr>                        cells             колкекція ячеек таблиці (<th>, <td>), що знаходяться внутристроки
+   * HTMLTableRowElement      <tr>                        sectionRowInbox   номер строки в текущей секції
+   * HTMLTableRowElement      <tr>                        rowIndex          номер строки в таблиці (враховется усі строки)
+   * HTMLTableCellElement     <th>, <td>                  cellIndex         номер ячейки в строці
+   *
+   */
+  const table1 = document.getElementById('table-1');
+  const btnPrimary = document.querySelector('.btn-primary');
+  const btnSecondariy = document.querySelector('.btn-secondary');
+
+  btnPrimary.onclick = function () {
+    alert(table1.caption.innerText);
+  };
+
+  btnSecondariy.onclick = function () {
+    alert(table1.tHead.innerHTML);
+  };
+  //Фази жизненого цикла собития
+  // перемение для текущих елементів ячейки та строки
+  let currentCell;
+  let currentRow;
+
+  // Стадия обробки собития
+  // false - bubble
+  // true - capture занурення
+
+  const eventPhase = true;
+
+  // Зупинка всплиття(занурення)
+  const stopPropagation = true;
+
+  // Добавление обработчиков сторкам і ячейкам таблици
+  const table1Body = table1.tBodies[0];
+
+  for (let tr of table1Body.rows) {
+    tr.addEventListener('click', trClickHendler, eventPhase);
+    for (let cell of table1Body.cells) {
+      cell.addEventListener('click', cellClickHendler, eventPhase);
+    }
+  }
+  // Добавление обработчика собития таблице
+  table1.addEventListener('click', table1ClickHandler);
+
+  function trClickHendler(e) {
+    console.log(`click on row^ : ${this.sectionRowIndex + 1}`);
+    console.log(`Event phase : ${e.eventPhase}`);
+    if (currentRow) currentRow.classList.remove('border-secodary');
+    currentRow = this;
+    currentRow.classList.add('border-secodary');
+  }
+
+  function cellClickHendler(e) {
+    console.log(`click on cell^ : ${this.cellIndex + 1}`);
+    console.log(`Event phase : ${e.eventPhase}`);
+    if (currentCell) currentCell.classList.remove('bg-secodary', 'text-white');
+    currentCell = this;
+    currentCell.classList.add('bg-secodary', 'text-white');
+  }
+
+  function table1ClickHandler(e) {
+    console.log(' click on table 1 ');
+    console.log(`Event phase : ${e.target.innerText}`);
+    if (stopPropagation) e.stopPropagation();
+  }
+  /**
+   * Фази собития
+   * існує 3 фази життевого циклу собития
+   * capture phase - фаза погружения(от корневого елемента к целевому)
+   * target phase - фаза достижени я целевого елемента
+   * bubble phase - фаза всплития(от целевого елементв к корневого)
+   *
+   * при наступлении собития самим глубоко вложенний елемент на котоорм оно произошло помечается как целевой (target)
+   * const btn = document.getElementById('btn');
+   * btn.onclick = function(e) {
+   * ! Event target
+   * console.log(e.target);
+   * ! Event phase code
+   * console.log(e.eventPhase);
+   *
+   * Свойства обекта Event
+   * Свойства            Опис
+   * target                 самий глубокий елемент, на якому відбулося собитие
+   * currentTarget(this)    текущий елемент, на якому спрацював обробник
+   * eventPhase             фаза спрацювання обробник сибирия(1 - погружение, 2 - фаза цели, 3 - всплиття)
+   *
+   * }
+   */
+
+  /**
+   * Делегування собитий - прием ротзработки, когда вместо установки обработчиков собития множеству елементов их общему предку устанавливается один общищй обработчик
+   *
+   */
+  // ! Делегування собитий
+
+  const table2 = document.getElementById('table-2');
+  table2 = addEventListener('click', table2ClickHandler);
+  function table2ClickHandler(e) {
+    console.log(' click on table 2 ');
+    console.log(`Event phase : ${e.eventPhase}`);
+    console.log(`Event target text : ${e.target.innerText}`);
+
+    let cell = e.target;
+    let row = cell.closest('tr');
+
+    console.log(`Click on cell : ${cell.cellIndex + 1}`);
+    if (currentCell) currentCell.classList.remove('bg-secondary', 'text-white');
+    currentCell = cell;
+    currentCell.classList.add('bg-secondary', 'text-white');
+
+    console.log(`Click on row : ${row.sectionRowIndex + 1}`);
+    if (currentRow) currentRow.classList.remove('border-secondary');
+    currentRow = row;
+    currentRow.classList.add('border-secondary');
+  }
+
+  // Видалення / додання обробника собтий
+  const btnTrack = document.querySelector('.btn-success');
+  btnTrack.addEventListener('click', btnTrackhandler);
+
+  function btnTrackhandler() {
+    if (this.classList.contains('btn-success')) {
+      table2.addEventListener('click', table2ClickHandler);
+      this.classList.remove('btn-success');
+      this.classList.add('btn-danger');
+      this.innerText = 'Disable tracking';
+    } else {
+      table2.removeEventListener('click', table2ClickHandler);
+      this.classList.remove('btn-danger');
+      this.classList.add('btn-success');
+      this.innerText = 'Enable tracking';
+    }
+  }
+
+  // ! JavaScript: Базовый курс для фронтенд-разработчиков. Урок 19 - Домашнее задание
+
+  /**
+   * На родительский елемент карточки с класом card навесить загальний оброботчик собитий
+   * которое при клке на любом внутреннем елементі картки модальним окном alert виводит назву елементу та списолк его классов
+   *
+   */
+
+  // ! JavaScript: Базовый курс для фронтенд-разработчиков. Урок 20. DOM API: События мыши и клавиатуры
+  /**
+   * Собития миши
+   *
+   * собития                    опис
+   *
+   * mousedown/mouseup          Нажатие/отпускание кнопок миши
+   * mouseover/mouseout         Наведение/уход курсора миши (с учетом перехода на
+   * mouseenter/mouseleave      дочерние елементи и без него
+   * mousemove                  рух миші
+   * click                      щелчок миши левой кнопкой
+   * dbclick                    Двойной щелчок левой кнопкой миши
+   * contextmenu                Виклик контексного меню при нажатии правой кнопки
+   *                            миши(может викликатися клавишами клавитури)
+   */
+
+  // собития миши, связанние с климок
+
+  const buttonPrimary = document.querySelector('.btn-primary');
+  const list1Items = document.querySelectorAll('#list-1 .list-group-item');
+
+  buttonPrimary.onmousedoun = function (e) {
+    console.log(` Event type : ${e.type} \n Mouse button : ${e.button} `);
+    switch (e.button) {
+      case 0:
+        list1Items[0].classList.toggle('bg-primary-subtle');
+        break;
+      case 1:
+        list1Items[1].classList.toggle('bg-primary-subtle');
+        break;
+      case 2:
+        list1Items[2].classList.toggle('bg-primary-subtle');
+        break;
+      case 3:
+        list1Items[3].classList.toggle('bg-primary-subtle');
+        break;
+      case 4:
+        list1Items[4].classList.toggle('bg-primary-subtle');
+        break;
+    }
+  };
+
+  buttonPrimary.onmouseup = function (e) {
+    console.log(`Event type : ${e.type} \n Mouse button : ${e.button}`);
+  };
+
+  buttonPrimary.onclick = function (e) {
+    console.log(`Event type : ${e.type} \n Mouse button : ${e.button}`);
+  };
+
+  buttonPrimary.ondbclick = function (e) {
+    console.log(`Event type : ${e.type} \n Mouse button : ${e.button}`);
+  };
+
+  buttonPrimary.oncontextmenu = function (e) {
+    console.log(`Event type : ${e.type} \n Mouse button : ${e.button}`);
+  };
+
+  // Собиитя, возникшие при нажатии кнопки миши с класиешй модификатоорм
+  const btnSec = document.querySelector('btn-secondary');
+
+  btnSec.onclick = function (e) {
+    if (e.shiftKey) {
+      console.log(`Event shift key : ${e.shiftKeytype} \n `);
+    }
+  };
+  // Cобития миши, связание с перемещением курсора
+  // mouseover/mouseout
+  list2 = document.querySelector('#list-2');
+  list2.onmouseover = function (e) {
+    if (e.target.closest('ul').id == 'list-2') {
+      e.target.classList.add('bg-primary', 'text-white');
+    }
+  };
+
+  list2.onmouseout = function (e) {
+    if (e.target.closest('ul').id == 'list-2') {
+      e.target.classList.remove('bg-primary', 'text-white');
+    }
+  };
+
+  // mouseenter/mouseleave
+
+  list2.onmouseenter = function (e) {
+    console.log(`Inside list`);
+    console.log(`Event target tag : ${e.target.tagName} \n `);
+    console.log(`Event relatedTarget tag : ${e.relatedTarget.tagName} \n `);
+  };
+
+  list2.onmouseleave = function (e) {
+    console.log(`Inside list`);
+    console.log(`Event target tag : ${e.target.tagName} \n `);
+    console.log(`Event relatedTarget tag : ${e.relatedTarget.tagName} \n `);
+  };
+
+  // натискання кнопок клавиатури
+  document.addEventListener('keydown', function (e) {
+    if (e.code == 'KeyZ') {
+      console.log(`Event key : ${e.key} \n Event code ${e.code} `);
+    }
+  });
+
+  /**
+   * ТИпи собитий указателя
+   *
+   * собитие указателя          аналог собития миши
+   *
+   * pointerdown                  mousedown
+   * pointerup                    mouseup
+   * pointermove                  mousemove
+   * pointerover                  mouseover
+   * pointerout                   mouseout
+   * pointerenter                 mouseenter
+   * pointerleave                 mouseleave
+   * pointerconcel                -
+   * gotpointercapture            -
+   * lostpointercapture           -
+   *
+   */
+
+  // собітия указателя
+  const list3 = document.getElementById('list-3');
+  const list3Items = list3.getElementsByClassName('list-group-item');
+  const nextBtn = document.querySelector('btn-success');
+  const prevBtn = document.querySelector('btn-warning');
+
+  let currentIndex = 0;
+  nextBtn.addEventListener('pointerup', nextBtnHandler);
+  prevBtn.addEventListener('pointerup', prevBtnHandler);
+
+  function nextBtnHandler(e) {
+    list3Items[currentIndex].classList.remove('bg-success-subtitle');
+    console.log(`Event pointer type : ${e.pointerType} `);
+    if (++currentIndex > 4) currentIndex = 0;
+    list3Items[currentIndex].classList.add('bg-success-subtitle');
+  }
+
+  function prevBtnHandler(e) {
+    list3Items[currentIndex].classList.remove('bg-success-subtitle');
+    console.log(`Event pointer type : ${e.pointerType} `);
+    if (--currentIndex < 0) currentIndex = 4;
+    list3Items[currentIndex].classList.add('bg-success-subtitle');
+  }
+
+  // !  JavaScript: Базовый курс для фронтенд-разработчиков. Урок 20 - Домашнее задание
+  /**  при двойном клике на елементе списка добавляет ему класс bg-sec-subtitle при єтом елементу которий бил вибран при прошлом двойном клике
+   * класс bg-sec-subtitle должен биьт удален
+   */
+  // ! https://www.youtube.com/watch?v=zxZ20V1mjgc
   // ! https://www.youtube.com/watch?v=_Jxe-WacgUs
   // ! https://www.youtube.com/watch?v=hOo538RtG1U
   // ! https://www.youtube.com/watch?v=klyjImfgfC8
