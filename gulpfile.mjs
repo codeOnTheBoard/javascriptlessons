@@ -97,7 +97,12 @@ export const browsersync = () => {
 
 export const scripts = () => {
   return (
-    src('app/libs/common.js')
+    src([
+      'app/libs/common.js',
+      'app/libs/umov.js',
+      'app/libs/loops.js',
+      'app/libs/functions.js',
+    ])
       .pipe(
         plumber({
           errorHandler: notify.onError(function (err) {

@@ -202,7 +202,29 @@ document.addEventListener('DOMContentLoaded', () => {
     typeof stringNamberDataType
   );
   const getstringNamberDataType = Number(stringNamberDataType);
-  console.info('Перетворив строку в число : ', getstringNamberDataType); //Використання функції Number(), або parseInt() для цілих чисел, або parseFloat() для дробових.
+  console.info('Перетворив строку в число : ', getstringNamberDataType);
+
+  //Використання функції Number(), або parseInt() для цілих чисел, або parseFloat() для дробових.
+  /**
+   * Функція Number() використовується для перетворення значень різних типів в числа.
+   *  Вона може перетворювати рядки, булеві значення, спеціальні значення, як null або undefined,
+   *  і навіть об'єкти, які мають методи для перетворення в число.
+   *  Number("123"); // 123
+   *  Number("123.45");  // 123.45
+   *
+   *  Функція parseFloat() — це вбудована функція в JavaScript, яка використовується для перетворення рядка (string)
+   *  в число з плаваючою комою (float). Вона аналізує рядок і повертає перше число з плаваючою комою, яке знайде.
+   *  Якщо рядок не починається з числового значення, результатом буде NaN (Not-a-Number).
+   *  parseFloat("123.45"); // 123.45
+   *  parseFloat("3.14abc"); // 3.14
+   *
+   *  parseInt(string, radix);
+   *  string: Рядок, який потрібно перетворити на ціле число.
+   *  radix: Необов'язковий параметр. Основа системи числення (від 2 до 36).
+   *  Наприклад, 2 для двійкової, 10 для десяткової, 16 для шістнадцяткової системи.
+   *
+   */
+
   console.info('Тип даних число : ', typeof getstringNamberDataType);
   console.log(' ');
   const strToNum = 'шість';
@@ -260,60 +282,1107 @@ document.addEventListener('DOMContentLoaded', () => {
   console.info('Тип даних зміній після перетворення :', typeof getNumToBigint);
 
   /**
-   *
-   *
    */
 
   console.error('\n' + ' **** Оператори в JS *** ');
 
-  //тип оператора      коліч операндов    примери
-  //  унарний               1               -2, typeof "string"
-  //  бинарний              2               5/2,   8%2
-  //  тернарний              3               age >= 18 ? "adult" : "child"
-  //! оператори по назначению
-  // Арифметические оператори       +(сложение)
-  // Оператори присваивания         =(присваивание значения)
-  // Оператори сравнения            >(больше)
-  // Логические оператори           && (логическое И)
-  // Битовие оператори              >> (cдвиг вправо)
-  // Специальние оператори          typeof(типи данних)
-  //! Арифметические оператори       +(сложение)
-  // Сложение                   +         2 + 3
-  // Вічитание                  -         5 - 3
-  // Множення                   *         5 * 3
-  // Ділення                    '/'         8 / 3
-  // Взятіе остатка от ділення  %         7 % 3
-  // Возведение в степень       **        2 ** 4
-  // Строчний оператор конкатениции
-  // 2 + "5" = 25
-  // Изменение знака числа унаррним мінусом
-  //let numBerMinus = -numBerMinus;
-  // Изменение знака числа унаррним плюсом
-  //let numBerPlus = +numBerPlus;
-  // Приоритет опрераторов как в математике
-  // унарний + главнее чем бинарний
+  console.info('Унарний тип оператора - :', -29);
+
+  console.info('Унарний тип оператора + :', +29);
+  console.info('Тип даних число з унанрним оператором - :', typeof -29);
+  console.info('Тип даних число з унанрним оператором + :', typeof +29);
+  console.log(' ');
+  console.info('Арифметичні оператори :');
+  console.log(' ');
+  console.info('Бінарний тип оператора + ( 4 + 6 = ) :', 4 + 6);
+  console.info('Бінарний тип оператора - ( 4 - 6 = ) :', 4 - 6);
+  console.info('Бінарний тип оператора * ( 4 * 6 = ) :', 4 * 6);
+  console.info('Бінарний тип оператора / ( 4 / 6 = ) :', 4 / 6);
+  console.info('Бінарний тип оператора ** ( 4 ** 6 = ) :', 4 ** 6);
+  console.info('Бінарний тип оператора % ( 4 % 2 = ) :', 4 % 2);
+  console.info('Бінарний тип оператора % ( 35 % 2 = ) :', 35 % 2);
+  console.log(' ');
+  const ageTer = 19;
+  console.info(
+    'Тернарний тип оператора ( const age >= 18 ? "adult" : "child") :',
+    ageTer >= 18 ? 'adult' : 'child'
+  );
+  /*
+ ! оператори по назначению
+* Арифметические оператори       +(сложение)
+* Оператори присваивания         =(присваивание значения)
+* Оператори сравнения            >(больше)
+* Логические оператори           && (логическое И)
+* Битовие оператори              >> (cдвиг вправо)
+* Специальние оператори          typeof(типи данних)
+* Приоритет опрераторов как в математике
+* унарний + главнее чем бинарний
+*/
+  console.error(
+    '\n' + ' **** Скорочений розгорнутий запис оператора присвоєння *** '
+  );
+  console.info('Простое присваивание const yyy = 14; ');
+
+  let xxx = 3;
+  let yyy = 14;
+
+  console.info(`Перша змінна - ${xxx}, друга змінна - ${yyy} `);
+
+  xxx = xxx + yyy;
+
+  console.info(
+    'Простe присвоення зі складанням X = X + Y ; ' +
+      `  ${xxx} = ${xxx} + ${yyy}; ` +
+      xxx
+  );
+
+  xxx += yyy;
+  console.info(
+    'Простe присвоення зі складанням X += Y ; ' + ` ${xxx} += ${yyy}  ; ` + xxx
+  );
+  console.log(' ');
+
+  xxx = xxx - yyy;
+  console.info(
+    'Простe присвоення з відніманням X = X - Y ; ' +
+      `   ${xxx} = ${xxx} - ${yyy} ; ` +
+      xxx
+  );
+
+  xxx -= yyy;
+  console.info(
+    'Простe присвоення з відніманням X = X - Y ; ' + ` ${xxx} -= ${yyy}; ` + xxx
+  );
+  console.log(' ');
+  xxx = xxx * yyy;
+  console.info(
+    'Простe присвоення з множенням X = X * Y ; ' +
+      `   ${xxx} = ${xxx} * ${yyy}; ` +
+      xxx
+  );
+
+  xxx *= yyy;
+  console.info(
+    'Простe присвоення з множенням X *= Y ; ' + ` ${xxx} *= ${yyy};  ` + xxx
+  );
+  console.log(' ');
+  xxx = xxx / yyy;
+  console.info(
+    'Простe присвоення з діленням X = Х / Y ; ' +
+      ` ${xxx} = ${xxx} / ${yyy} ` +
+      xxx
+  );
+
+  xxx /= yyy;
+  console.info(
+    'Простe присвоення з діленням X /= Y ; ' + ` ${xxx} /= ${yyy} ` + xxx
+  );
+
+  console.log(' ');
+  xxx = xxx % yyy;
+  console.info(
+    'Простe присвоення з діленням з залишком X = X % Y ; ' +
+      ` ${xxx} = ${xxx} % ${yyy} ` +
+      xxx
+  );
+
+  xxx %= yyy;
+
+  console.info(
+    'Простe присвоення з діленням з залишком X %= Y ; ' +
+      `  ${xxx} %= ${yyy} ` +
+      xxx
+  );
+
+  let ter = 14;
+  let terDo = 2;
+  ter %= terDo;
+  console.info(
+    'Простe присвоення з діленням з залишком ter %= terDo ; ' +
+      `  14 %= ${terDo} ` +
+      ` відповідь ` +
+      ter
+  );
+
+  let terOne = 15;
+  let terDoOne = 2;
+  terOne %= terDoOne;
+  console.info(
+    'Простe присвоення з діленням з залишком ter %= terDo ; ' +
+      `  15 %= ${terDoOne} ` +
+      ` відповідь ` +
+      terOne
+  );
+
+  // ! Оператори присваивания       Сокращенная    развернутая запись       =(присваивание значения)
+  // приходить значення в Х та Y після дії результат становиться новим значенням в результаті математичної дії.
+  //  Простое присваивание                X = Y             X = Y
+  //  Присваивание со сложением           X += Y            X = Х + Y
+  //  Присваивание с вичитанием           X -= Y            X = Х - Y
+  //  Присваивание с умножением           X *= Y            X = Х * Y
+  //  Присваивание с делением             X '/'= Y          X = Х / Y
+  //  Присваивание со взятием остатка     X %= Y            X = Х % Y
 
   console.error('\n' + ' **** Кінець оператори в JS *** ');
+  console.log(' ');
+  console.error('\n' + ' **** Як працювати з префіксним інкрементом в JS *** ');
+  console.log(' ');
 
+  let resIncrem = 4;
+  console.log('Крок 0. Стартове значення resIncrem', resIncrem);
+  console.log(' ');
+  resIncrem = resIncrem++;
+  console.log(`Крок 1. Результат інкремента ${resIncrem} `, resIncrem);
+  resIncrem = ++resIncrem;
+  console.log(`Крок 2. Результат інкремента ${resIncrem} `, resIncrem);
+  resIncrem = ++resIncrem;
+  console.log(`Крок 3. Результат інкремента ${resIncrem} `, resIncrem);
+  resIncrem = ++resIncrem;
+  console.log(`результат інкремента ${resIncrem} `, resIncrem);
+
+  console.log(' ');
+
+  console.error('\n' + ' **** Як працювати з префіксним дескреентом в JS *** ');
+  console.log(' ');
+  /**В JavaScript префіксний декремент (--variable) використовується для зменшення значення змінної на одиницю перед тим, як це значення буде використане в подальшому виразі. */
+  let preffDeskr = 18;
+  console.log('Крок 0. Стартове значення preffDeskr', preffDeskr);
+  console.log(' ');
+  preffDeskr = --preffDeskr;
+  console.log('Крок 1. Результат дескремента ', preffDeskr);
+  preffDeskr = --preffDeskr;
+  console.log('Крок 2. Результат дескремента ', preffDeskr);
+  preffDeskr = --preffDeskr;
+  console.log('Крок 3. Результат дескремента ', preffDeskr);
+  preffDeskr = --preffDeskr;
+  console.log('Крок 4. Результат дескремента ', preffDeskr);
+  console.log(' ');
+  console.error(
+    '\n' + ' **** Як працювати з постфіксним інкрементом в JS *** '
+  );
+  console.log(' ');
+  let postfixIncrement = 14;
+  console.log('Крок 0. Стартове значення postfixIncrement', postfixIncrement);
+  postfixIncrement = postfixIncrement++;
+  console.log(
+    'Крок 1. Результат постфіксного інкремента postfixIncrement',
+    postfixIncrement
+  );
+  postfixIncrement = postfixIncrement++;
+  console.log(
+    'Крок 2. Результат постфіксного інкремента postfixIncrement',
+    postfixIncrement
+  );
+
+  console.log(' ');
+  console.error(
+    '\n' + ' **** Як працювати з постфіксним Дескрементом в JS *** '
+  );
+  console.log(' ');
+  let postfixDescrem = 14;
+  console.log('Крок 0. Стартове значення postfixDescrem', postfixDescrem);
+  postfixDescrem = postfixDescrem--;
+  console.log(
+    'Крок 1. Результат постфіксного інкремента postfixDescrem',
+    postfixDescrem
+  );
+  postfixDescrem = postfixDescrem--;
+  console.log(
+    'Крок 2. Результат постфіксного інкремента postfixDescrem',
+    postfixDescrem
+  );
+  console.error(
+    '\n' +
+      ' **** Як працювати з префіксним декрементом в циклі віл 5 до 0 в бік зменшення в JS *** '
+  );
+  for (let i = 5; i > 0; --i) {
+    console.log(i);
+  }
+
+  console.log(' ');
+
+  console.error(
+    '\n' +
+      ' **** Як працювати з постфіксним декрементом в циклі віл 5 до 0 в бік зменшення в JS *** '
+  );
+  for (let i = 5; i > 0; i--) {
+    console.log(i);
+  }
+  console.log(' ');
+
+  console.error(
+    '\n' +
+      ' **** Як працювати з префіксним інкрементом в циклі від 0 до 9 в бік збільшення в JS *** '
+  );
+  for (let i = 0; i < 9; ++i) {
+    console.log(i);
+  }
+  console.log(' ');
+
+  console.error(
+    '\n' +
+      ' **** Як працювати з постфіксним інкрементом в циклі від 0 до 9 в бік збільшення в JS *** '
+  );
+  for (let i = 0; i < 9; i++) {
+    console.log(i);
+  }
   /**
+   * ! Инкремент и декремент
+   * Инкремент (++)
+   * Декремент (--)
+   * Инкремент та Декремент мають дві форми запису:
+   * префіксную опрератор іде перед переменной приклад, ++count
+   * постфиксную опрератор іде після переменно приклад, count--
    *
+   * У циклі for між використанням ++i та i++ немає різниці в результаті.
+   * Обидва цикли виконають однакову кількість ітерацій і виведуть однакові значення.
+   * Різниця між префіксним і постфіксним інкрементами в такому випадку не має значення,
+   * оскільки інкрементація відбувається після кожної ітерації, і жоден із варіантів не впливає на виконання тіла циклу.
    *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
-   *
+   * Якщо ж різниця між ++i і i++ використовується в інших контекстах, то порядок виконання інкрементації може мати значення.
    *
    */
 
-  console.warn('Нижче не систематизованна інформація з JS');
+  console.info(' **** Логічне перетворення усіх типів даних **** ');
+  console.log(' ');
+  console.info('Отримати число із рядка 40 ');
+  const numbToString = '40';
+  console.log(typeof numbToString);
+  console.log(Number(numbToString));
+  console.log(typeof Number(numbToString));
+  console.log(' ');
+  console.info('Отримати число із рядка сорок');
+  const numbToStringLine = 'сорок';
+  console.log(typeof numbToStringLine);
+  console.log(Number(numbToStringLine));
+  console.log(typeof Number(numbToStringLine));
+  console.log(' ');
+
+  const trueToNumber = true;
+  console.log('Отримати число із true - 1 ');
+  console.log(Number(trueToNumber));
+
+  console.log('Отримати число з false - 0 ');
+  console.log(Number(false));
+
+  console.log('Отримати число з null - 0 ');
+  console.log(Number(null));
+
+  console.log('Отримати число з undefined - NaN ');
+  console.log(Number(undefined));
+
+  console.log('Отримати число з BigInt - число ');
+  console.log(Number(getNumToBigint));
+
+  console.log('Отримати число з undefined - NaN ');
+  console.log(Number(undefined));
+
+  console.log('Отримати число з рядка рядок - NaN ');
+  console.log(Number('рядок'));
+
+  console.log('Отримати число з пустого рядка - 0 ');
+  console.log(Number(''));
+
+  console.log('Отримати рядка з числа 30 - 30 ');
+  console.log(String(30));
+  console.log(typeof String(30));
+
+  console.log('Отримати рядок з логічного типу true - true ');
+  console.log(String(true));
+  console.log(typeof String(true));
+
+  console.log('Отримати рядок з логічного типу null - null ');
+  console.log(String(null));
+  console.log(typeof String(null));
+
+  console.log('Отримати рядок з логічного типу undefined - undefined ');
+  console.log(String(undefined));
+  console.log(typeof String(undefined));
+
+  console.log('Логічне значення із числа 30 - true ');
+  console.log(Boolean(40));
+  console.log(typeof Boolean(40));
+
+  console.log('Логічне значення із числа 0 - true ');
+  console.log(Boolean(0));
+  console.log(typeof Boolean(0));
+
+  console.log('Логічне значення із числа -30 - true ');
+  console.log(Boolean(-30));
+  console.log(typeof Boolean(-30));
+
+  console.log('Логічне значення із рядка "-30" - true ');
+  console.log(Boolean('-30'));
+  console.log(typeof Boolean('-30'));
+
+  console.log('Логічне значення із рядка "рядок" - true ');
+  console.log(Boolean('рядок'));
+  console.log(typeof Boolean('рядок'));
+
+  console.log('Логічне значення із рядка "" - false ');
+  console.log(Boolean(''));
+  console.log(typeof Boolean(''));
+
+  console.log('Логічне значення із рядка " " - true ');
+  console.log(Boolean(' '));
+  console.log(typeof Boolean(' '));
+
+  console.log('Логічне значення із null - false ');
+  console.log(Boolean(null));
+  console.log(typeof Boolean(null));
+
+  console.log('Логічне значення із undefined - false ');
+  console.log(Boolean(undefined));
+  console.log(typeof Boolean(undefined));
+
+  console.warn('Автоматичне перетворення типів');
+  const numOne = 10;
+  const logicOne = true;
+  const divideOne = numOne / logicOne;
+  console.log(
+    `divideOne = numOne / logicOne : (${numOne} / ${logicOne} ) = ${divideOne} `
+  );
+
+  const numTwo = 20;
+  const logicTwo = true;
+  const logicFalse = false;
+  const divideTwo = numTwo / logicTwo;
+  const divideTwoFalse = numTwo / logicFalse;
+  console.log(
+    `divideTwo = numTwo / logicTwo : (${numTwo} / ${logicTwo} ) = ${divideTwo} `
+  );
+  console.log(' ');
+  console.log(
+    `divideTwoFalse = numTwo / logicFalse : (${numTwo} / ${logicFalse} ) = ${divideTwoFalse} `
+  );
+  console.log(' Ділити на нуль неможливо. В JS результат - Infinity  ');
+  console.log(
+    `divideTwoFalse = numTwo / 0 : (${numTwo} / 0 ) = ${divideTwoFalse} `
+  );
+
+  /**
+   * Автоматично перетворюеться рядок в число.
+   * Якщо число набрано не літерами, а цифрами, воно перед и після числа обмежене лапками
+   * а перед рядком проставлений знак математичної дії, який може інтепретуватися однолзначно.
+   * + знак " плюс " однозначно трактуеться як сумувати або конкантенувати, тобто автоматичене перетворення типів не можливе.
+   * Якщо між двух чисел стоїть один знак +, викомується дія сумування.
+   * Якщо між двух чисел стоїть один знак +, у одного числа тип number, а у другого числа - string, викон викомується дія конкатенація
+   */
+
+  console.log(' ');
+  console.log('Конкатенація / сумування');
+  console.log(' ');
+
+  console.log(`3417 = 34 + '17' Результат дії : `, 34 + '17');
+  console.log(`51 = 34 + 17 Результат дії : `, 34 + 17);
+
+  let testRez = 1 / 0;
+  console.warn('Домашне завдання №1 ', testRez);
+
+  console.warn('Домашне завдання №2 : String(testRez) : ', String(testRez));
+
+  console.warn('Домашне завдання №3 : Boolean(testRez) : ', Boolean(testRez));
+
+  console.warn('Домашне завдання №4 : true - 1 = ', true - 1);
+  console.warn('Домашне завдання №5 : true + 4 = ', true + 4);
+
+  console.warn('Домашне завдання №6 : 9 + false = ', 9 + false);
+  console.warn('Домашне завдання №7 : 9 "/ false = ', 9 / false);
+
+  console.warn('Домашне завдання №8 : null * 2 = ', null * 2);
+  console.warn('Домашне завдання №9 : undefined = ', typeof undefined);
+
+  console.warn('Домашне завдання №10 : undefined = ', +undefined);
+  console.warn('Домашне завдання №11 : undefined = ', Number(undefined));
+
+  console.warn('Домашне завдання №12 : 11 + +"12" = ', 11 + +'12');
+
+  console.log(' **** Операторы: співставлення ****  ');
+
+  console.warn(`Оператор більше: 5 > 4 - true : Підтверження `, 5 > 4);
+  console.warn(
+    `Оператор більше або дорівнює : 5 >=6 - false : Підтверження `,
+    5 >= 6
+  );
+  console.warn(`Оператор меньше : 5 < 6 - true : Підтверження `, 5 < 6);
+
+  console.warn(
+    `Оператор меньше або дорівнює : 5 <=4 - false : Підтверження `,
+    5 <= 4
+  );
+
+  console.warn(`Не строге порівняння : 5 == 5  - true : Підтверження `, 5 == 5);
+  console.warn(
+    `Не строге порівняння : 5 == "5"  - true : Підтверження `,
+    5 == '5'
+  );
+  console.warn(`Cтроге порівняння : 5 === 5  - true : Підтверження `, 5 === 5);
+  console.warn(
+    `Cтроге порівняння : 5 === "5"  - false : Підтверження `,
+    5 === '5'
+  );
+  console.warn(
+    `Cтроге порівняння : 5 === "25"  - false : Підтверження `,
+    5 === '25'
+  );
+  console.warn(
+    `Cтроге порівняння : 5 === "gnm"  - false : Підтверження `,
+    5 === 'gnm'
+  );
+
+  console.warn(
+    `Cтроге порівняння : "пять" === "чотири"  - false : Підтверження `,
+    'пять' === 'чотири'
+  );
+
+  console.warn(`Не cтроге нерівно :   5 != 6  - true : Підтверження `, 5 != 6);
+  console.warn(`Не cтроге нерівно :   5 != 5  - false : Підтверження `, 5 != 5);
+  console.warn(
+    `Не cтроге нерівно :   5 != "5"  - false : Підтверження `,
+    5 != '5'
+  );
+
+  console.warn(
+    `Cтроге нерівно :   5 !== "5"  - true : Підтверження `,
+    5 !== '5'
+  );
+
+  console.warn(
+    `Cтроге нерівно :   5 !== "25"  - true : Підтверження `,
+    5 !== 25
+  );
+  /**
+   * Співставлення рядків відбуівається співставленням UTF кодів кожного символу за порядком його розміщення в рядку,
+   * довша строшка є більшою за коротшу строчку
+   * більша літера є меньше, ніж меньша літера
+   * str1.codePointAtPosition(0) => str1.codePointAt(0))
+   *
+   */
+  const str1 = 'Перемога';
+  console.log(
+    "Цей код виведе код Unicode символу на першій позиції ('П') у рядку 'Перемога' : ",
+    str1.codePointAt(0)
+  );
+  console.log(
+    "Цей код виведе код Unicode символу на 7-мій позиції ('г') у рядку 'Перемога' : ",
+    str1.codePointAt(6)
+  );
+
+  console.log(' **** Cпівставлення різних типів **** ');
+
+  console.log(' 5 > true ', 5 > true);
+  console.log(' 2== {} ({} => NaN) ', 2 == {});
+  console.log(' null ==  0  : ', null == 0); // не рівно , тому що значення і число не співставні тому false
+  console.log(' null ===  0 : ', null === 0); // не рівно , тому що значення і число не співставні тому false
+  console.log(' null == undefined : ', null == undefined); // null == undefined, тому що false == false
+  console.log(' null === undefined : ', null === undefined); // null === undefined, відповідь false тому що типи однокові, значення різні
+  // ! null віддає false
+  // ! undefined віддає false
+
+  console.info(' ');
+  console.info('**** Як правильно використовувати логічні оператори **** ');
+  console.info(' ');
+  console.info(' || або ');
+  console.info(' ');
+
+  /** перший логічний оператор або (или, or)
+   *
+   * || - логічне або
+   * операнди перевіряються на true / false зліва на право
+   * оператор || повертає істинне значення (true), якщо хоча б один з операндів є істинним,
+   * іншими словами
+   * повертається перший операнд, що віддає true
+   * якщо всі операнди є хибними (false), то результат операції буде false.
+   * якщо всі операнди є правдивими (true), то результат операції буде true.
+   * якщо жоден операнд не повертає true, повертає останій операнд не дивлячись що він віддає
+   *
+   * ! Логіка роботи оператора ||:
+   *
+   * перевірка значень зліва направо: Оператор || перевіряє операнди зліва направо.
+   * він повертає перше істинне значення, яке знайде, ігноруючи всі наступні.
+   * якщо всі операнди хибні:
+   * якщо всі операнди хибні, то оператор повертає останнє хибне значення.
+   *
+   * приведення до булевого типу:
+   * якщо операнд не є булевим типом, він приводиться до булевого значення за допомогою внутрішньої функції Boolean
+   *
+   */
+
+  let x = 0;
+  let y = 'Hello';
+  let z = null;
+
+  let result = x || y || z; // result буде 'Hello', оскільки це перше істинне значення
+
+  console.log('result = x || y || z :', (result = x || y || z)); // Hello
+  console.log('0 || "Hello" || null', 0 || 'Hello' || null); // Hello
+
+  console.log('4 < 1 || 5 == 3 || 5 > 4', 4 < 1 || 5 == 3 || 5 > 4); // 5 > 4
+  console.log('null || undefined || false', null || undefined || false); // false
+
+  console.log('Задача 1. false || true : ', false || true); // true
+  console.log('Задача 2. true || false  : ', true || false); // true
+  console.log('Задача 3. true || true || false  : ', true || false || true); // true
+  console.log('Задача 4. false || false  : ', false || false); // false
+  console.log('Задача 5. 2 || 3  : ', 2 || 3); // 2
+
+  console.log('Задача 5.1. "2" || 3  : ', '2' || 3); // 2
+  console.log('Задача 5.2. "2&&?" || 3  : ', '2&&?' || 3); // 2&&?
+  console.log('Задача 5.3. " " || 3  : ', ' ' || 3); // пробел
+  console.log('Задача 5.4. 0 || 3  : ', 0 || 3); // 3
+  console.log('Задача 5.5. "Єто строка" || 3  : ', 'Єто строка' || 3); // "Єто строка"
+
+  console.log('Задача 6. 0 || 3 || 3 || 4  : ', 0 || 3 || 3 || 4); // 3
+  console.log('Задача 7. 10 || 3 || 3 || 4  : ', 10 || 3 || 3 || 4); // 10
+  console.log('Задача 8. 0 || 0 || 0 || 1  : ', 0 || 0 || 0 || 1); // 1
+  console.log('Задача 9. 0 || 0 || 0 || 0  : ', 0 || 0 || 0 || 0); // 0
+  console.log('Задача 10. "0" || 0 || 0 || 0  : ', '0' || 0 || 0 || 0); // 0
+  console.log(
+    'Задача 11. "" || "" || "" || " " || 0  : ',
+    '' || '' || '' || ' ' || 0
+  ); // " "
+  console.log(
+    'Задача 12. "" || "" || "" || " " || 1  : ',
+    '' || '' || '' || '' || 1
+  ); // 1
+
+  console.log(
+    'Задача 13. null || undefined || false  : ',
+    null || undefined || false
+  ); // false
+
+  console.log(
+    'Задача 13. null || false || undefined : ',
+    null || false || undefined
+  ); // undefined
+
+  console.log(
+    'Задача 14. false || undefined || null : ',
+    false || undefined || null
+  ); // null
+
+  console.log(
+    'Задача 15. false || undefined || null || 54 : ',
+    false || undefined || null || 54
+  ); // 54
+
+  console.log(
+    'Задача 16. false || undefined || 45 || null || 54 : ',
+    false || undefined || 45 || null || 54
+  ); // 45
+
+  /**
+   *
+   * !Логічні таблиці:
+   *
+   * | Вираз 1 | Вираз 2 |   Результат (||) |
+   * |---------|---------|------------------|
+   * | false   | false   | => alse          |
+   * |---------|---------|------------------|
+   * | false   | true    | => true          |
+   * |---------|---------|------------------|
+   * | true    | false   | => true          |
+   * |---------|---------|------------------|
+   * | true    | true    | => true          |
+   * |---------|---------|------------------|
+   *
+   * Таким чином, логічний оператор || використовується для перевірки
+   * декількох умов та вибору першого істинного значення в JavaScript.
+   *
+   */
+
+  console.info(' ');
+  console.info(' &&  і  ');
+  console.info(' ');
+
+  /** Логічний оператор і (и, and) використовується для виконання логічної операції "і"
+   * Симвод логічного оператора &&
+   *
+   * Цей оператор повертає істинне значення (true), лише якщо всі операнди є істинними.
+   * Якщо хоча б один з операндів є хибним, результат операції буде false.
+   *
+   * Операнди перевіряються на true / false зліва на право
+   * повертається перший операнд, що віддає false
+   * якщо усі операнди повертають true, повертається останє true
+   * якщо усі операнди повертають false, повертається останє false
+   *
+   *  ! Логіка роботи оператора &&:
+   *
+   * перевірка значень зліва направо:
+   * оператор && перевіряє операнди зліва направо.
+   * він повертає перше хибне значення, яке знайде, ігноруючи всі наступні операнди.
+   * якщо всі операнди істинні:
+   *
+   * якщо всі операнди істинні, оператор повертає останнє істинне значення.
+   *
+   * приведення до булевого типу:
+   * якщо операнд не є булевим типом, він приводиться до булевого значення за допомогою внутрішньої функції Boolean.
+   *
+   *  ! Ліниве обчислення:
+   *
+   *  Оператор && також використовує ліниве обчислення, тобто він не обчислює правий операнд, якщо лівий вже є хибним.
+   *
+   */
+
+  // Возвращается первий ложний  опренд
+  console.log('Задача 1. false && true : ', false && true); // false
+  console.log('Задача 2. true && false : ', true && false); // false
+  console.log('Задача 3. true && true : ', true && true); // true
+  console.log('Задача 4. false && false : ', false && false); // false
+
+  // Вcе значения истинни, возвращается последнее
+  console.log('Задача 5. 2 && 4 : ', 2 && 4); // 4
+
+  // Возвращается первий ложний операнд
+  console.log(
+    'Задача 6. null && undefined && false : ',
+    null && undefined && false
+  ); // null
+
+  // Возвращается первий ложний операнд
+  console.log(
+    'Задача 7. 4 && null && undefined && false : ',
+    4 && null && undefined && false
+  ); // null
+
+  // Возвращается первий ложний операнд
+  console.log(
+    'Задача 8. null && 78  && undefined && false : ',
+    null && 78 && undefined && false
+  ); // null
+  // Возвращается первий ложний операнд
+  console.log(
+    'Задача 9. undefined && null && false : ',
+    undefined && null && false
+  ); //  undefined
+
+  console.log(
+    'Задача 10. 0 && 10 && undefined && " " && null && false : ',
+    0 && 10 && undefined && ' ' && null && false
+  ); //  0
+  console.log(
+    'Задача 11. 4 < 1 && 5 == 3 && 5 > 4 : ',
+    4 < 1 && 5 == 3 && 5 > 4
+  ); // 4 < 1
+  console.log(
+    'Задача 12. 4 >= 1 && 5 > 3 && 5 > 4 : ',
+    4 >= 1 && 5 > 3 && 5 > 4
+  ); // 4 < 1
+
+  console.info(' ');
+  console.info(' !  не ');
+  console.info(' ');
+
+  /**
+   * Логічні таблиці:
+   *
+   * | Вираз 1 | Вираз 2 |   Результат (&&) |
+   * |---------|---------|------------------|
+   * | false   | 	false  | 	false           |
+   * |---------|---------|------------------|
+   * | false	 |  true	 |  false           |
+   * |---------|---------|------------------|
+   * | true    | 	false  | 	false           |
+   * |---------|---------|------------------|
+   * | true    | 	true   |	true            |
+   * |---------|---------|------------------|
+   *
+   * ! Ліниве обчислення:
+   *
+   *  Оператор && також використовує ліниве обчислення,
+   *  тобто він не обчислює правий операнд, якщо лівий вже є хибним.
+   *
+   * Таким чином, логічний оператор && використовується для перевірки кількох умов,
+   * які повинні всі бути істинними, і дозволяє уникати помилок, коли не всі умови повинні бути перевірені.
+   *
+   */
+
+  /**
+   * ! логічний оператор НЕ (NOT).
+   *
+   * Якщо оператор NOT застовується до булевого значення то повертає протилежне значення.
+   * Тобто якщо до true - поверне false, якщо до false - true.
+   * Якщо застосовується до не булевого значення то спочатку переводить в булове значення, а потім повертає протилежне.
+   *
+   * !true // false
+   * !null // true
+   * ! має найвищий пріоритет
+   *
+   * ! Логіка роботи оператора ! :
+   *
+   * Відбуіається приведення до булевого типу
+   * перед тим, як інвертувати значення, оператор ! приводить операнд до булевого типу.
+   * це означає, що будь-яке значення буде спочатку перетворено в true або false за допомогою внутрішньої функції Boolean.
+   * інверсія:
+   * після приведення до булевого типу оператор !
+   * змінює це значення на протилежне:
+   * true стає false,
+   * а false стає true.
+   *
+   * ! Значення, що приводяться до true і false:
+   *
+   * Ложні значення (Falsy): Усі наступні значення приводяться до false:
+   *
+   * false
+   * 0
+   * -0
+   * "" (порожній рядок)
+   * null
+   * undefined
+   * NaN (нечислове значення)
+   *
+   * Істинні значення (Truthy):
+   *
+   * Усі інші значення, які не є вищезгаданими, приводяться до true.
+   *
+   */
+
+  console.log('Задача 1 !false : ', !false); // true
+  console.log('Задача 2 !true : ', !true); // false
+  console.log('Задача 3 !200 : ', !200); // false
+  console.log('Задача 4 !0 : ', !0); // true
+  console.log('Задача 5 !"isne" : ', !'isne'); // false
+  console.log('Задача 6 !null : ', !null); // true
+  console.log('Задача 7 !undefined : ', !undefined); // true
+  console.log('Задача 8 !NaN : ', !NaN); // true
+  console.log('Задача 9 !null : ', !null); // true
+  console.log('Задача 10 !!null : ', !!null); // false
+  console.log('Задача 10 !!200 : ', !!200); // true
+  console.info(' ');
+
+  /**
+   * ! Логічні таблиці:
+   *
+   * | Вхідне значення | Приведене до булевого  |   Результат ( ! ) |
+   * |-----------------|------------------------|-------------------|
+   * |   true	         |        true            |   	 false        |
+   * |-----------------|------------------------|-------------------|
+   * |   false         |       	false	          |      true         |
+   * |-----------------|------------------------|-------------------|
+   * |   0             |       	false           |      true         |
+   * |-----------------|------------------------|-------------------|
+   * |   1             |      	true	          |      false        |
+   * |-----------------|------------------------|-------------------|
+   * |   ""            |       	false           |    	 true         |
+   * |-----------------|------------------------|-------------------|
+   * |   "text"        |       	true            |	     false        |
+   * |-----------------|------------------------|-------------------|
+   * |    null         |     	  false           |      true         |
+   * |-----------------|------------------------|-------------------|
+   * |    undefined    |       	false	          |      true         |
+   * |-----------------|------------------------|-------------------|
+   * |    NaN          |    	  false           |      true         |
+   * |-----------------|------------------------|-------------------|
+   *
+   */
+
+  console.info(' ');
+  console.info(' ?? Оператор нульового злиття ');
+  console.info(' ');
+
+  /**
+   * ?? Оператор нульового злиття
+   * Оператор Нулевого злиття повертає перше визначене значення
+   * яке НЕ Є null або undefined
+   *
+   * якщо значення усіх операндів не визначенно, повертає значення останього
+   * його часто використовують для надання значення за замовчуванням у випадках,
+   * коли змінна або вираз може бути null або undefined.
+   *
+   * ! Порівняння з оператором ||
+   *
+   * Часто оператор нульового злиття порівнюють з логічним оператором ||,
+   * який теж використовується для надання значення за замовчуванням
+   *
+   * Таким чином, оператор нульового злиття зручний,
+   * коли ви хочете точно обробляти випадки null і undefined,
+   * але не інші falsy-значення, як false, 0, або порожній рядок.
+   *
+   */
+
+  console.log('Задача 1. null ?? 1 : ', null ?? 1); // 1
+  console.log('Задача 2. null ?? 3431 : ', null ?? 3431); // 3431
+  console.log('Задача 3. undefined ?? 3431 : ', undefined ?? 3431); // 3431
+  console.log(
+    'Задача 3. null ?? "Alex" ?? "anonym" : ',
+    null ?? 'Alex' ?? 'anonym'
+  ); // Alex
+
+  console.log('Задача 4. undefined ?? null ?? 0 : ', undefined ?? null ?? 0); // 0
+  console.log('Задача 5. undefined ?? null  : ', undefined ?? null); // null
+  console.log('Задача 6. null ?? undefined : ', null ?? undefined); // undefined
+
+  let name;
+  console.log(name ?? 'anonym');
+  console.log('Задача 7. name ?? "anonym" : ', name ?? 'anonym'); // 'anonym'
+  console.log('Задача 8. name ?? undefined ?? 0 : ', name ?? undefined ?? 0); // 0
+
+  console.info(' ');
+
+  let tooltheme = {
+    theme: 'темна',
+    font: null,
+  };
+
+  let chaiceTheme = tooltheme.theme ?? 'світла';
+  let chaiceFont = tooltheme.font ?? 'Arial';
+
+  console.info('Обрана тема', chaiceTheme); // Виведе "темна"
+  console.info('Обраний шрифт', chaiceFont); // Виведе "Arial"
+
+  function setToolSite(param) {
+    let lang = param.lang ?? 'українська';
+    let theme = param.theme ?? 'світла';
+
+    console.log(`Мова: ${lang}, Тема: ${theme}`);
+  }
+
+  console.info('Робота функції  setToolSite  ');
+
+  console.info(' ');
+
+  setToolSite({ lang: 'англійська' }); // Виведе "Мова: англійська, Тема: світла"
+
+  setToolSite({}); // Виведе "Мова: українська, Тема: світла"
+
+  /**
+   *
+   *  Назва                              Оператор              примери
+   *
+   *  ИЛИ                                ||                  false || true
+   *  И                                  &&                  false && true
+   *  НЕ                                 !                   !true
+   *  Нулевое слияние                    ??                  null ?? 0
+   *  Логическое присваивание ИЛИ        ||=                 null ||= 1
+   *  Логическое присваивание И          &&=                 null &&= 1
+   *  Нулевое присваивание               ??=                 null ??= 1
+   *
+   *  https://xn--80adth0aefm3i.xn--j1amh/
+   *
+   */
+
+  console.info(' ');
+  console.info(' ||=  Оператор логічого присвоення ');
+  console.info(' ');
+
+  /**
+   *
+   * оператор логічного присвоєння (||=) — це спрощений спосіб присвоїти значення змінній лише тоді,
+   * коли ця змінна має false значення,
+   * тобто значення, яке інтерпретується як false в логічному контексті.
+   *
+   * операнди конвертуються в логічне значення true / false зліва на право
+   * якщо отримане значення false, лівому операнду присвоюється значення правого операнда
+   *
+   * ! Як це працює
+   *
+   * якщо змінна має false-значення
+   * !(наприклад, false, null, undefined, 0, NaN, або порожній рядок ""),
+   * їй присвоюється нове значення.
+   *
+   * якщо змінна вже віддає true (тобто значення, яке не є false), її значення залишається незмінним.
+   *
+   */
+
+  let ageLogPriYly = null;
+  ageLogPriYly ||= 18;
+  console.log(
+    'Задача 1. Працює оператор логічного присвоення ageLogPriYly ||= 18 : ',
+    ageLogPriYly
+  ); // 18
+
+  let ageLogPriYlyOne = null;
+  ageLogPriYlyOne ||= null;
+  console.log(
+    'Задача 2. Працює оператор логічного присвоення ageLogPriYlyOne ||= 18 : ',
+    ageLogPriYlyOne
+  ); // null
+
+  let ageLogPriYlyTwo = null;
+  ageLogPriYlyTwo ||= undefined;
+  console.log(
+    'Задача 3. Працює оператор логічного присвоення ageLogPriYlyTwo ||= undefined : ',
+    ageLogPriYlyTwo
+  ); // undefined
+
+  let ageLogPriYlyThree = null;
+  ageLogPriYlyThree ||= 'lines';
+  console.log(
+    'Задача 4. Працює оператор логічного присвоення ageLogPriYlyThree ||= "lines" : ',
+    ageLogPriYlyThree
+  ); // lines
+
+  let ageLogPriYlyFoure = undefined;
+  ageLogPriYlyFoure ||= 3 * 4;
+  console.log(
+    'Задача 5. Працює оператор логічного присвоення ageLogPriYlyFoure ||= 3*4 : ',
+    ageLogPriYlyFoure
+  ); // lines
+  console.info(' ');
+  let nameUse = '';
+  nameUse ||= 'Анонім';
+
+  console.log('Імя користувача :', nameUse); // Виведе "Анонім"
+
+  let nameUseTwo = 'Оля';
+  nameUseTwo ||= 'Анонім';
+
+  console.log('Імя користувача :', nameUseTwo); // Виведе "Оля"
+
+  let quantity = 0;
+  quantity ||= 10;
+
+  console.log('Кількість людей: ', quantity); // Виведе 10
+
+  let nameUseTRee = '';
+  nameUseTRee = nameUseTRee || 'Анонім';
+
+  console.log('Імя користувача', nameUseTRee); // Виведе "Анонім"
+  console.info(' ');
+
+  /**
+   *  ! Основні моменти
+   *
+   * Простота: Оператор ||= дозволяє уникнути повторного написання змінної і робить код коротшим.
+   * false значення:
+   * він спрацьовує лише тоді, коли змінна має одне з false-значень,
+   * ! таких як false, null, undefined, 0, NaN, або "".
+   *
+   * Універсальність:
+   * цей оператор корисний у багатьох ситуаціях,
+   * коли потрібно надати значення за замовчуванням змінній,
+   * яка може бути не визначена або порожня.
+   */
+  console.info(' ');
+  console.info(' &&= Оператор логічного происвоення ');
+  console.info(' ');
+
+  /**
+   * Логічне присвоення і &&=
+   * лівий операнд false ний ему не присваивается з начение правого опреранда
+   * левий операнд ПРАВДИВИЙ  ему не присваивается з начение правого опреранда
+   *
+   * оператор логічного присвоєння &&= дозволяє скорочено записувати операцію
+   * присвоєння значення змінній, якщо ця змінна вже має true значення
+   * (тобто значення, яке в логічному контексті інтерпретується як true).
+   *
+   * ! Як це працює
+   *
+   * якщо змінна має true значення (наприклад, будь-яке значення,
+   * ! крім false, null, undefined, 0, NaN, або порожнього рядка ""
+   * їй буде присвоєно нове значення.
+   *
+   * якщо змінна має false значення, її значення залишиться незмінним.
+   *
+   */
+
+  let ageLogPriAnd = null;
+  ageLogPriAnd &&= 3 * 4;
+  console.log(
+    'Задача 1. Працює оператор логічного присвоення ageLogPriAnd &&= 3*4 : ',
+    ageLogPriAnd
+  ); // null
+
+  let ageLogPriAndOne = undefined;
+  ageLogPriAndOne &&= 13 * 4;
+  console.log(
+    'Задача 2. Працює оператор логічного присвоення ageLogPriAndOne &&= 13 * 4 : ',
+    ageLogPriAndOne
+  ); // null
+
+  let ageLogPriAndTree = '';
+  ageLogPriAndTree &&= 15 * 4;
+  console.log(
+    'Задача 3. Працює оператор логічного присвоення ageLogPriAndTree &&= 15 * 4 : ',
+    ageLogPriAndTree
+  ); // ''
+
+  let ageLogPriAndFoure = 'Пробел';
+  ageLogPriAndFoure &&= 15 * 4;
+  console.log(
+    'Задача 4. Працює оператор логічного присвоення ageLogPriAndFoure &&= 15 * 4 : ',
+    ageLogPriAndFoure
+  ); // 60
+
+  /**
+   *
+   * ! Основні моменти:
+   *
+   * Простота: Оператор &&= дозволяє уникнути повторного написання змінної, спрощуючи код.
+   * True-значення: Він спрацьовує лише тоді,
+   * коли змінна має true-значення, тобто будь-яке значення, яке не є
+   * ! false, null, undefined, 0, NaN, або "".
+   *
+   * Універсальність: Цей оператор корисний у ситуаціях,
+   * коли потрібно змінити значення змінної лише за умови,
+   * що вона вже містить певне (truthy) значення.
+   *
+   * Використання оператора &&= допомагає зробити код коротшим і зрозумілішим,
+   *  особливо в умовах, де важливо враховувати наявність
+   * або відсутність значення в змінній перед її оновленням.
+   *
+   */
+
+  console.info(' ');
+  console.info(' ??= Оператор нульового происвоення ');
+  console.info(' ');
+  /**
+   * Оператор нульового присвоення ??=
+   * лівий операнд не визначений(null)
+   * йому присвоюється значення правого опреранда
+   *
+   * оператор нульового присвоєння (??=) дозволяє скорочено
+   * записувати операцію присвоєння значення змінній лише в тому випадку,
+   * якщо ця змінна є null або undefined.
+   *
+   * Цей оператор поєднує в собі перевірку на наявність нульових значень
+   * і присвоєння значення змінній, що робить код більш лаконічним.
+   *
+   * ! Як це працює
+   *
+   * Якщо змінна має значення null або undefined, їй присвоюється нове значення.
+   * Якщо змінна має будь-яке інше значення
+   * ! (true або false, але не null і не undefined),
+   * її значення залишається незмінним.
+   *
+   */
+
+  let ageNullPris = null;
+  ageNullPris ??= 78 * 4;
+  console.log(
+    'Задача 1. Працює оператор нульового присвоення ageNullPris ??= 78 * 4 : ',
+    ageNullPris
+  ); // 312
+
+  // приоретет операторов
+  let height;
+  let width;
+  let area = (height ??= 20) * (width ??= 34);
+
+  console.log(
+    `Задача 2. Працює оператор нульового присвоення (height ??= 20) * (width ??= 34) : ${area} `
+  );
+
+  /**
+   *
+   *  ! Основні моменти:
+   *
+   * Простота: Оператор ??= дозволяє уникнути повторного написання змінної,
+   * що робить код коротшим і легшим для читання.
+   * Нульові значення: Він спрацьовує лише тоді, коли змінна має значення
+   * ! null або undefined, тобто саме ці два значення вважаються "нульовими".
+   *
+   * Універсальність: Цей оператор корисний у ситуаціях,
+   * коли потрібно задати значення змінній,
+   * яка може бути не визначена або мати значення null.
+   *
+   * Використання оператора ??= дозволяє ефективно обробляти випадки,
+   * коли змінна може бути null або undefined,
+   * забезпечуючи простий спосіб присвоєння значення за замовчуванням.
+   *
+   */
+  console.warn('Початок не систематизованої інформації з JS');
+
   // уроків 73 роліків
   // const lessonsJs = 73;
   // Уроки Javascript
@@ -556,6 +1625,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // null == undefined  false == false
   // null віддае false
   // undefined false
+
   // Логіческие оператори
   //  Назва                              Оператор              примери
   //    ИЛИ                                ||                  false || true
@@ -1925,4 +2995,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // ! https://www.youtube.com/watch?v=_Jxe-WacgUs
   // ! https://www.youtube.com/watch?v=hOo538RtG1U
   // ! https://www.youtube.com/watch?v=klyjImfgfC8
+  console.warn('Кінець не систематизованої інформації з JS');
 });
