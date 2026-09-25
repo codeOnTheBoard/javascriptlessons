@@ -16,7 +16,7 @@ import svgSprite from 'gulp-svg-sprite';
 import svgmin from 'gulp-svgmin';
 
 import gulpSass from 'gulp-sass';
-import * as dartSass from 'sass'; // Исправленный импорт
+import * as dartSass from 'sass';
 import autoprefixer from 'gulp-autoprefixer';
 import sourcemaps from 'gulp-sourcemaps';
 import rename from 'gulp-rename';
@@ -24,7 +24,7 @@ import stripCssComments from 'gulp-strip-css-comments';
 import cleancss from 'gulp-clean-css';
 import strip from 'gulp-strip-comments';
 import newer from 'gulp-newer';
-import { deleteAsync } from 'del';
+import { rm } from 'node:fs/promises'; // Використовуємо нативний модуль Node.js замість del
 import plumber from 'gulp-plumber';
 import notify from 'gulp-notify';
 import browserSync from 'browser-sync';
@@ -33,9 +33,8 @@ import replace from 'gulp-replace';
 import fonter from 'gulp-fonter';
 import ttf2woff2 from 'gulp-ttf2woff2';
 import include from 'gulp-include';
-import debug from 'gulp-debug'; // Добавленный импорт
+import htmlhint from 'gulp-htmlhint';
 
-// Устанавливаем компилятор Sass
 const sass = gulpSass(dartSass);
 
 export const pages = () => {
@@ -45,6 +44,8 @@ export const pages = () => {
         includePaths: 'app/components',
       })
     )
+    .pipe(htmlhint('.htmlhintrc'))
+    .pipe(htmlhint.reporter())
     .pipe(dest('app'))
     .pipe(browserSync.stream());
 };
@@ -71,7 +72,7 @@ export const styles = () => {
     .pipe(rename('libs.min.css'))
     .pipe(
       autoprefixer({
-        overrideBrowserlist: ['last 10 versions'],
+        overrideBrowserslist: ['last 10 versions'], // Виправлено описку в очікуваному ключі
         grid: true,
       })
     )
@@ -92,17 +93,13 @@ export const browsersync = () => {
     server: { baseDir: 'app/' },
     notify: false,
     online: false,
+    reloadDelay: 300, // Дає браузеру 300мс на завершення фонових запитів перед оновленням
   });
 };
 
 export const scripts = () => {
   return (
-    src([
-      'app/libs/common.js',
-      'app/libs/umov.js',
-      'app/libs/loops.js',
-      'app/libs/functions.js',
-    ])
+    src('app/libs/jscommon.js')
       .pipe(
         plumber({
           errorHandler: notify.onError(function (err) {
@@ -116,7 +113,7 @@ export const scripts = () => {
       .pipe(strip())
       .pipe(rigger())
       .pipe(concat('scripts.min.js'))
-      //    .pipe(terser())
+      //* .pipe(terser()) //* Застосовуємо мініфікацію JS
       .pipe(dest('app/js/'))
       .pipe(browserSync.stream())
   );
@@ -175,13 +172,101 @@ export const fonts = () => {
     .pipe(browserSync.stream());
 };
 
+// Видалення через нативний fs/promises
 export const cleaning = () => {
-  return deleteAsync('dest/img/');
+  return rm('dest/img/', { recursive: true, force: true });
 };
 
 export const cleandest = () => {
-  return deleteAsync('dest/**/*', { force: true });
+  return rm('dest', { recursive: true, force: true });
 };
+
+// Робота з картинками
+const paths = {
+  src: 'app/images/*.{jpg,jpeg,png}',
+  srccom: 'app/images/*.{jpg,jpeg,png,svg}',
+  srcwebp: 'app/images/*.webp',
+  dest: 'app/img',
+  destwebp: 'app/images',
+};
+
+export const optimizeImages = () => {
+  return gulp
+    .src(paths.srcwebp)
+    .pipe(
+      newer({
+        dest: paths.dest,
+        map: function (relativePath) {
+          return relativePath.replace(/(\.\w+)$/, '.webp');
+        },
+      })
+    )
+    .pipe(
+      imagemin([
+        imageminWebp({
+          quality: 50,
+          lossless: true,
+          nearLossless: 80,
+          sharpness: 4,
+          alphaQuality: 50,
+          method: 5,
+        }),
+      ])
+    )
+    .pipe(gulp.dest(paths.dest));
+};
+
+export const convertToWebp = () => {
+  return gulp
+    .src(paths.src)
+    .pipe(
+      newer({
+        dest: paths.dest,
+        map: function (relativePath) {
+          return relativePath.replace(/(\.\w+)$/, '.webp');
+        },
+      })
+    )
+    .pipe(webp())
+    .pipe(gulp.dest(paths.dest));
+};
+
+export const compressImages = () => {
+  return gulp
+    .src(paths.srccom)
+    .pipe(
+      imagemin([
+        imageminMozjpeg({ progressive: true }),
+        imageminPngquant({ quality: [0.6, 0.8] }),
+        imageminSvgo({
+          plugins: [{ removeViewBox: false }, { cleanupIDs: false }],
+        }),
+      ])
+    )
+    .pipe(gulp.dest(paths.dest));
+};
+// Конвертація у формат AVIF
+export const convertToAvif = () => {
+  return gulp
+    .src(paths.src)
+    .pipe(
+      newer({
+        dest: paths.dest,
+        map: function (relativePath) {
+          return relativePath.replace(/(\.\w+)$/, '.avif');
+        },
+      })
+    )
+    .pipe(avif({ quality: 50 })) // Стиснення з якістю 50%
+    .pipe(gulp.dest(paths.dest));
+};
+
+export const pic = series(
+  compressImages,
+  convertToWebp,
+  convertToAvif,
+  optimizeImages
+);
 
 export const startwatch = () => {
   browsersync();
@@ -211,74 +296,4 @@ export const buildcopy = () => {
 };
 
 export const build = series(cleandest, styles, scripts, buildcopy);
-// Экспорт по умолчанию для основной серии задач
 export default series(styles, scripts, startwatch);
-
-// работа с картингками
-const paths = {
-  src: 'app/images/*.{jpg,jpeg,png}',
-  srccom: 'app/images/*.{jpg,jpeg,png,svg}',
-  srcwebp: 'app/images/*.webp',
-  dest: 'app/img',
-  destwebp: 'app/images',
-};
-
-export const optimizeImages = () => {
-  return gulp
-    .src(paths.srcwebp)
-    .pipe(
-      newer({
-        dest: paths.dest,
-        map: function (relativePath) {
-          return relativePath.replace(/(\.\w+)$/, '.webp');
-        },
-      })
-    )
-    .pipe(
-      imagemin([
-        imageminWebp({
-          quality: 50,
-          lossless: true, // Использование режима без потерь
-          nearLossless: 80, // Режим почти без потерь
-          sharpness: 4, // Уровень резкости
-          alphaQuality: 50, // Качество альфа-канала,
-          method: 5,
-        }),
-      ])
-    )
-    .pipe(gulp.dest(paths.dest));
-};
-
-// Задача для конвертации изображений в WebP
-export const convertToWebp = () => {
-  return gulp
-    .src(paths.src)
-    .pipe(
-      newer({
-        dest: paths.dest,
-        map: function (relativePath) {
-          return relativePath.replace(/(\.\w+)$/, '.webp');
-        },
-      })
-    )
-    .pipe(webp())
-    .pipe(gulp.dest(paths.dest)); // Исправлено на правильную директорию назначения
-};
-// Экспорт задачи 'convertToWebp' отдельно
-
-export const compressImages = () => {
-  return gulp
-    .src(paths.srccom)
-    .pipe(
-      imagemin([
-        imageminMozjpeg({ progressive: true }),
-        imageminPngquant({ quality: [0.6, 0.8] }),
-        imageminSvgo({
-          plugins: [{ removeViewBox: false }, { cleanupIDs: false }],
-        }),
-      ])
-    )
-    .pipe(gulp.dest(paths.dest));
-};
-
-export const pic = series(compressImages, convertToWebp, optimizeImages);

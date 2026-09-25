@@ -1,537 +1,889 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8" />
-    <!-- <base href="/"> -->
-    <title>JavaScript: сторінка сайту</title>
-    <meta
-      name="description"
-      content="Ігор Васильченко найкращий виконавець, який здатний створити якісний сайт з нуля"
-    />
-    <meta
-      name="keywords"
-      content="створити сайт з нуля, верстаю швидкі шаблони"
-    />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="Ігор Васильченко" />
-    <meta
-      name="copyright"
-      content="Усі права на сайт та на його невідємні частини в рамках данного проекту належить Васильченко Ігорю"
-    />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1"
-    />
-    <link rel="shortcut icon" href="img/favicon/favicon.ico" />
-    <!-- 3 нижние строки Chrome, Firefox OS and Opera; Windows Phone; iOS Safari    -->
-    <meta name="theme-color" content="#000" />
-    <meta name="msapplication-navbutton-color" content="#000" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
-    <style>
-      html {
-        background-color: #ffffff;
-      }
 
-      body {
-        overflow-x: hidden;
-        opacity: 0;
-      }
-    </style>
-    <link rel="stylesheet" href="css/libs.min.css" />
-  </head>
-  <!-- Это первый комментарий -->
+<head>
+  <meta charset="utf-8" />
+  <!-- <base href="/"> -->
+  <title>JavaScript: конспект вивчення мови програмування</title>
+  <meta name="description" content="Ігор Васильченко найкращий виконавець, який здатний створити якісний сайт з нуля" />
+  <meta name="keywords" content="створити сайт з нуля, верстаю швидкі шаблони" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Ігор Васильченко" />
+  <meta name="copyright"
+    content="Усі права на сайт та на його невідємні частини в рамках данного проекту належить Васильченко Ігорю" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <link rel="shortcut icon" href="img/favicon/favicon.ico" />
+  <!-- 3 нижние строки Chrome, Firefox OS and Opera; Windows Phone; iOS Safari    -->
+  <meta name="theme-color" content="#000" />
+  <meta name="msapplication-navbutton-color" content="#000" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+  <style>
+    html {
+      background-color: #ffffff;
+    }
 
-  <header class="header-fon">
-    <div class="container">
-      <div class="row header-row">
-        <div class="header-content">
-          <h1 class="header-title">Учу Javascript</h1>
-          <p class="header-p">Основи JavaScript для початківців :SavchukIT</p>
-        </div>
+    body {
+      overflow-x: hidden;
+      opacity: 0;
+    }
+  </style>
+  <link rel="stylesheet" href="css/libs.min.css" />
+</head>
+<!-- Это первый комментарий -->
+
+<header class="header-fon">
+  <div class="container">
+
+    <div class="row header-row">
+
+      <div class="header-content">
+
+        <h1 class="header-title">Вчу Javascript</h1>
+        <p class="header-p">Основи JavaScript для початківців: 155 уроків</p>
+
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <body>
-    <!-- Custom HTML -->
-    <!-- htmllint disable -->
-    <!-- prettier-ignore -->
+<body>
+  <!-- Custom HTML -->
+  <!-- htmllint disable -->
+  <!-- prettier-ignore -->
 
 
+  <main>
+    <section class="container">
+      <h2>Програма вивчення JS</h2>
+      <div class="row1">
+        <ol class="course-list">
+          <li>
+            <span class="lesson-title">Урок 0.0. Javascript. Вступление</span>
+            <span class="duration">: 21:49</span>
+            <p class="description">Це дуже простий урок, я його зрозумів</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 0.1. Учебная программа курса JavaScript</span>
+            <span class="duration">: 14:32</span>
+            <p class="description">Це дуже простий урок, я його зрозумів</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 0.2. Зачем нужен JavaScript</span>
+            <span class="duration">: 14:52</span>
+            <p class="description">Це дуже простий урок, я його зрозумів</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 0.3. Учебные ресурсы по JavaScript</span>
+            <span class="duration">: 6:45</span>
+            <p class="description">Це дуже простий урок, я його зрозумів</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 0.4. Рабочая среда для JavaScript</span>
+            <span class="duration">: 19:04</span>
+            <div class="description">
+              <p>Робоче середовище для JavaScript — це Node.js (для виконання коду поза браузером /
+                на сервері) або браузер (Chrome, Firefox тощо — для вебсторінок), у поєднанні з редактором коду Visual
+                Studio Code (VS Code).</p>
 
-<!--
-Уроки Javascript
-Андрій Кльон 73 уроків
--->
-<main>
-  <section class="container">
-    <h2>Програма вивчення JS</h2>
-    <div class="row1">
-      <p>Модуль 0. Введение в JavaScript</p>
-      <ul>
-        <li>0.0. Вступление</li>
-        <li>0.1. Учебный план курса</li>
-        <li>0.2. Зачем нужен JavaScript</li>
-        <li>0.3. Учебные ресурсы по JavaScript</li>
-        <li>0.4.Рабочая среда для JavaScript</li>
-        <li>0.5. Подключение ИИ в редактор кода</li>
-        <li>0.6. Подключение JavaScript в HTML</li>
-        <li>0.7. Использование JavaScript вне браузера</li>
-        <li>0.8. Знакомство с Git и GitHub</li>
-      </ul>
-      <p>ОСНОВНАЯ ЧАСТЬ Модуль 1. Основы JavaScript</p>
-      <ul>
-        <li>1.1. Типы данных</li>
-        <li>1.2. Переменные: понятие, область видимости и жизненный цикл</li>
-        <li>1.3. Математические операторы</li>
-        <li>1.4. Логические выражения</li>
-        <li>1.5. Условное ветвление</li>
-        <li>1.6. Оператор switch</li>
-        <li>1.7. Тернарный оператор</li>
-        <li>1.8. Циклы: понятие</li>
-        <li>1.9. Цикл for</li>
-        <li>1.10. Циклы while и do-while</li>
-        <li>1.11. Оператор break</li>
-        <li>1.12. Оператор continue</li>
-        <li>1.13. Знакомство с функциями</li>
-        <li>1.14. Знакомство с объектами</li>
-        <li>1.15. Встроенный объект Math</li>
-        <li>1.16. Знакомство с DOM</li>
-        <li>
-          1.17. Конкатенация и шаблонные строки Практическая часть (проект)
-        </li>
-      </ul>
-      <p>Модуль 2. Объекты и методы</p>
-      2.1. Объекты и данные в них 2.2. Хранение по ссылке 2.3. Оператор in 2.4.
-      Цикл for-in 2.5. Цикл for-of 2.6. Методы объекта 2.7. Методы строк 2.8.
-      Методы чисел 2.9. Методы массивов 2.10. Ошибки как объекты 2.11.
-      Регулярные выражения Практическая часть (проект)
+              <p>Повна відповідь: Робоче середовище (JS Runtime Environment) складається з кількох ключових рівнів:</p>
 
-      <p>Модуль 3. Глубокое погружение в функции</p>
-      3.1. Функции и процедуры 3.2. Функции и память 3.3. Объявление функций:
-      function hoisting, function declaration, function expression 3.4.
-      Стрелочные функции 3.5. Область видимости функций 3.6. Контекст вызова
-      функции this 3.7. Функции высшего порядка 3.8. Callback-функции 3.9.
-      Рекурсия 3.10. Замыкание 3.11. Работа с параметрами времени: объект Date
-      3.12. Планирование вызова, setTimeout + setInterval 3.13. Знакомство с
-      асинхронностью Практическая часть (проект)
-      <p>Модуль 4. Структуры данных</p>
-      4.1.Стек, очередь 4.2. Иммутабельность 4.3. Перебор элементов массива 4.4.
-      Методы split, sort, join 4.5. Методы pop, push, shift, unshift 4.6. Метод
-      filter 4.7. Метод map 4.8. Метод reduce 4.9. Поиск элемента: методы find,
-      findIndex, includes, indexOf, lastIndexOf 4.10. Поиск элемента: методы
-      some, every, search, match 4.11. Массивы vs Объекты 4.12. Оператор остатка
-      spread и rest 4.13. Деструктуризация массивов 4.14. Деструктуризация
-      объектов 4.15. Глобальные методы 4.16. JSON-формат Практическая часть
-      (проект)
-      <p>Модуль 5. Глубокое погружение в DOM</p>
-      5.1. Ссылки на HTML-элементы 5.2. Свойства HTML-элементов 5.3. Обход
-      html-коллекций, forEach 5.4. Стилизация html-элементов. Объект classList
-      5.5. Навигация по html-элементам 5.6. Браузерные события 5.7. Всплытие
-      5.8. Снятие обработчиков событий 5.9. Обработка кликов и иных событий
-      5.10. Объект события 5.11. Работа с формами 5.12. Безопасность
-      пользовательского ввода 5.13. Динамическая работа с DOM 5.14. Работа с
-      data-атрибутами 5.15. Рендеринг (render) 5.16. Модальные окна 5.17.
-      Удаление элементов из рендеринга 5.18. Браузерная память: sessionStorage,
-      localStorage. Куки (cockie) 5.19. Поиск и исправление ошибок Практическая
-      часть (проект)
-      <p>Модуль 6. Асинхронный JavaScript</p>
-      6.1. Синхронность и асинхронность в JavaScript 6.2. Хранилище данных,
-      сервер, API 6.3. Объект Promise 6.4. Получение данных 6.5. CRUD-операции,
-      fetch 6.6. AJAX 6.7. Асинхронные функции. Цепочки промисов (promise chain)
-      then-catch, конструкция try-catch-finally 6.8. Методы промисов 6.9.
-      Обработка кода ошибок сервера 6.10. Обработка ошибок API 6.11. Авторизация
-      пользователей, токены. Работа с сервисами Insomnia и Postman Практическая
-      часть (проект)
-      <p>Модуль 7. Сборка приложений</p>
-      7.1. Модульный JavaScript 7.2. Рефакторинг кода 7.3. Публикация приложений
-      на GitHub Практическая часть (проект)
-      <p>ДОПОЛНИТЕЛЬНАЯ ЧАСТЬ</p>
-      <p>Модуль 8. Библиотеки, npm, форматтеры, линтеры</p>
-      <p>Модуль 9. Отладка, дебаггинг, профилирование и основы тестирования</p>
-      <p>
-        Модуль 10. Основы объектно-ориентированного программирования Модуль 11.
-        Основы TypeScript
-      </p>
-    </div>
-  </section>
-  <section class="block-section">
-    <div class="container">
-      <div class="row">
-        <h1>JavaScript: Базовый курс для фронтенд-разработчиков.</h1>
-        <h2 class="block-title">Введение: 8:31</h2>
-        <div class="block-content">
-          <p>
-            Досить чітко і послідовно про склад курсу вивчення JavaScript. Відео
-            8:31
-          </p>
-        </div>
+              <p>Движок та середовище виконання (Runtime Engine):
+              </p>
+              <p>Браузери (Frontend): Використовують движки на кшталт V8 (Chrome, Edge), SpiderMonkey (Firefox) або
+                JavaScriptCore
+                (Safari) для взаємодії з DOM-деревом вебсторінки.
+              </p>
+              <p>
+                Серверне середовище (Backend):
+
+                Node.js — найпопулярніше стандартне середовище на базі V8.
+
+                Bun / Deno — сучасні та швидші альтернативи Node.js із вбудованою підтримкою TypeScript.
+              </p>
+              <p> Редактор коду (IDE):
+
+                Visual Studio Code (VS Code) — фактичний стандарт індустрії з величезною екосистемою розширень.
+
+                WebStorm — потужне платне середовище від JetBrains.
+              </p>
+              <p>
+                Менеджер пакетів та інструменти розробки:</p>
+
+              <p> Менеджери залежностей: npm, pnpm або yarn для встановлення бібліотек.
+
+                Збирачі проекту (Bundlers): Vite або Webpack для компіляції та збірки додатка.
+              </p>
+            </div>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 0.5. Подключение ИИ (AI) - искусственного интеллекта в редактор кода Visual
+              Studio
+              Code</span>
+            <span class="duration">: 7:15</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 0.6. Подключение JavaScript в HTML</span>
+            <span class="duration">: 3:53</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 0.7. Использование JavaScript вне браузера</span>
+            <span class="duration">: 7:14</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 0.8.1. Что такое Git и GitHub. Установка Git</span>
+            <span class="duration">: 8:04</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 0.8.2. Регистрация на GitHub</span>
+            <span class="duration">: 4:36</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 0.8.3. Commit, push, branch, pull request, merge. Командная работа на
+              GitHub</span>
+            <span class="duration">: 19:37</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 0.8.4. Работа с GitHub из редактора кода</span>
+            <span class="duration">: 19:10</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.1. Типы данных в JavaScript</span>
+            <span class="duration">: 15:42</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.2. Переменные в JavaScript: понятие, область видимости, жизненный
+              цикл</span>
+            <span class="duration">: 20:23</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.3. Математические операторы</span>
+            <span class="duration">: 15:14</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.4. Взаимодействие: alert, confirm, prompt</span>
+            <span class="duration">: 10:53</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.5. Операторы сравнения</span>
+            <span class="duration">: 4:54</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.6. Логические операторы</span>
+            <span class="duration">: 25:18</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.7. Преобразование типов</span>
+            <span class="duration">: 7:48</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.8. Условное ветвление</span>
+            <span class="duration">: 16:24</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.9. Тернарный оператор</span>
+            <span class="duration">: 12:59</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.10. Оператор switch</span>
+            <span class="duration">: 11:32</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.11. Циклы. Циклы while, do...while</span>
+            <span class="duration">: 6:39</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.12. Оператор break</span>
+            <span class="duration">: 8:54</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.13. Оператор continue</span>
+            <span class="duration">: 9:43</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.14. Цикл for</span>
+            <span class="duration">: 4:51</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.15. Знакомство с функциями</span>
+            <span class="duration">: 19:17</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.16.1. Знакомство с объектами</span>
+            <span class="duration">: 11:07</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.16.2. Знакомство с массивами</span>
+            <span class="duration">: 7:48</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.17. Встроенный объект Math</span>
+            <span class="duration">: 11:29</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.18.1. DOM-дерево и глобальный объект document</span>
+            <span class="duration">: 19:34</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.18.2. Обработчики события на элементах</span>
+            <span class="duration">: 4:28</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.18.3. Изменение, удаление и добавление элементов</span>
+            <span class="duration">: 7:43</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.18.4. Чтение данных из формы</span>
+            <span class="duration">: 18:30</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 1.19. Конкатенация и шаблонные строки</span>
+            <span class="duration">: 14:26</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Проект на JavaScript "Тест". Задание</span>
+            <span class="duration">: 2:09</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Проект на JavaScript "Тест". Решение</span>
+            <span class="duration">: 8:01</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Проект на JavaScript "Калькулятор". Задание</span>
+            <span class="duration">: 4:29</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Проект на JavaScript "Калькулятор". Решение</span>
+            <span class="duration">: 14:07</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.1. Объекты и данные в них</span>
+            <span class="duration">: 14:09</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.2. Оператор in и поиск ключей в объекте</span>
+            <span class="duration">: 3:43</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.3. Оператор for...in</span>
+            <span class="duration">: 4:25</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.4. Оператор for...of</span>
+            <span class="duration">: 4:29</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.5. Перебор элементов массива. Метод forEach</span>
+            <span class="duration">: 3:56</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.6. Метод объекта</span>
+            <span class="duration">: 5:08</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.7. Контекст this</span>
+            <span class="duration">: 5:08</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.8. Встроенные методы строки</span>
+            <span class="duration">: 18:07</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.9. Встроенные методы массивов</span>
+            <span class="duration">: 22:19</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.10. Многомерные массивы</span>
+            <span class="duration">: 4:22</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.11. Продвинутый перебор объектов: Object.keys, Object.values,
+              Object.entries</span>
+            <span class="duration">: 15:31</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.12. Массивы vs Объекты</span>
+            <span class="duration">: 7:33</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.13. Рендеринг данных из объекта</span>
+            <span class="duration">: 8:26</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.14. Ошибки как объекты. try... catch... finally</span>
+            <span class="duration">: 14:37</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 2.15. Регулярные выражения / RegExp</span>
+            <span class="duration">: 18:01</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Проект на JavaScript "Форма регистрации / авторизации"</span>
+            <span class="duration">: 8:13</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 3.1. Функции и процедуры</span>
+            <span class="duration">: 7:16</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 3.2. Функции и память</span>
+            <span class="duration">: 3:28</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 3.3. Function declaration, Function expression. Function hoisting</span>
+            <span class="duration">: 10:03</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 3.4. Стрелочные функции (arrow function)</span>
+            <span class="duration">: 7:09</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 3.5. Область видимости функций и работа с параметрами</span>
+            <span class="duration">: 12:44</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 3.6. Функции высшего порядка / callback</span>
+            <span class="duration">: 23:52</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 3.7. Рекурсия</span>
+            <span class="duration">: 13:09</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 3.8. Замыкание (Closer)</span>
+            <span class="duration">: 12:07</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 3.9. Работа с параметрами времени: объект Date</span>
+            <span class="duration">: 12:47</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 3.10. Форматирование даты и времени</span>
+            <span class="duration">: 9:01</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 3.11. Планирование вызова: setTimeout и setInterval</span>
+            <span class="duration">: 19:16</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 3.12. Таймер на JavaScript</span>
+            <span class="duration">: 6:48</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 3.13. Знакомство с асинхронностью</span>
+            <span class="duration">: 4:46</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Проект на JavaScript "Таймер обратного отсчета". Задание</span>
+            <span class="duration">: 18:09</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Проект на JavaScript "Таймер обратного отсчета". Решение</span>
+            <span class="duration">: 2:56</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Проект на JavaScript "Имитация загрузки файла". Задание</span>
+            <span class="duration">: 13:31</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Проект на JavaScript "Имитация загрузки файла". Решение</span>
+            <span class="duration">: 5:49</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 4.1. Очередь и стек</span>
+            <span class="duration">: 3:01</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 4.2. Иммутабельность в JavaScript</span>
+            <span class="duration">: 12:01</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 4.3. Метод sort()</span>
+            <span class="duration">: 14:31</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 4.4. Метод filter()</span>
+            <span class="duration">: 7:03</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 4.5. Метод map()</span>
+            <span class="duration">: 6:32</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 4.6. Метод reduce()</span>
+            <span class="duration">: 13:42</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 4.7. Методы find() и findIndex()</span>
+            <span class="duration">: 11:58</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 4.8. Методы some() и every()</span>
+            <span class="duration">: 7:33</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 4.9. Метод search()</span>
+            <span class="duration">: 4:32</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 4.10. Оператор "..." (spread / rest)</span>
+            <span class="duration">: 9:36</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 4.11. Деструктуризация массивов в JavaScript</span>
+            <span class="duration">: 10:14</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 4.12. Деструктуризация объектов в JavaScript</span>
+            <span class="duration">: 10:10</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 4.13. Деструктуризация в параметрах функции в JavaScript</span>
+            <span class="duration">: 19:07</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 4.14. JSON-формат</span>
+            <span class="duration">: 14:26</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Проект "Страница интернет-магазина"</span>
+            <span class="duration">: 31:16</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.1. Глобальные объекты window, global, globalThis</span>
+            <span class="duration">: 13:40</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.2. Получение ссылки и поиск DOM-элемента</span>
+            <span class="duration">: 11:42</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.3. Работа с текстовыми узлами: innerHTML, innerText, textContent</span>
+            <span class="duration">: 7:07</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.4. Свойства и атрибуты HTML в JavaScript</span>
+            <span class="duration">: 12:04</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.5. Стилизация HTML-элементов. Объект classList</span>
+            <span class="duration">: 15:58</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.6. Продвинутые способы работы с атрибутами HTML в JavaScript</span>
+            <span class="duration">: 11:08</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.7. Навигация по HTML-элементам</span>
+            <span class="duration">: 17:00</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.8. Динамическое создание, добавление и удаление элементов</span>
+            <span class="duration">: 13:58</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.9. События в браузере</span>
+            <span class="duration">: 7:19</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.10. Снятие обработчиков событий</span>
+            <span class="duration">: 5:40</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.11. Объект события Event</span>
+            <span class="duration">: 11:29</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.12. Прокрутка страницы вверх на JavaScript</span>
+            <span class="duration">: 4:07</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.13. Работа с формами HTML в JavaScript</span>
+            <span class="duration">: 16:34</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.14. Создание формы регистрации на JavaScript</span>
+            <span class="duration">: 40:26</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.15. Всплытие (Bubbling)</span>
+            <span class="duration">: 6:04</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.16. Работа с data-атрибутами</span>
+            <span class="duration">: 15:30</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.17. Модальные окна</span>
+            <span class="duration">: 8:16</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.18. Безопасность пользовательского ввода</span>
+            <span class="duration">: 6:13</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.19. Браузерная память: localStorage, sessionStorage</span>
+            <span class="duration">: 21:35</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.20. Глобальные объекты history & location</span>
+            <span class="duration">: 6:37</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.21. Переключатель темы на JavaScript</span>
+            <span class="duration">: 19:33</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.22. Аудиоплеер на JavaScript</span>
+            <span class="duration">: 32:06</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.23.1. Знакомство с Drag&Drop</span>
+            <span class="duration">: 14:01</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.23.2. Тест на Drag&Drop</span>
+            <span class="duration">: 14:28</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.23.3. Продвинутый тест на Drag&Drop</span>
+            <span class="duration">: 18:16</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.23.4. Перетаскивание элементов списка с Drag&Drop</span>
+            <span class="duration">: 16:58</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 5.23.5. Продвинутая загрузка файлов перетаскиванием с помощью
+              Drag&Drop</span>
+            <span class="duration">: 30:18</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Проект "Капча 'Пазлы' ". Задание</span>
+            <span class="duration">: 18:58</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Проект "Капча 'Пазлы' ". Решение</span>
+            <span class="duration">: 4:35</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.1. Синхронность и асинхронность в JavaScript</span>
+            <span class="duration">: 14:26</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.2. Промисы (Promises)</span>
+            <span class="duration">: 23:03</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.3. Цепочки промисов (Promise Chain)</span>
+            <span class="duration">: 20:58</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.4. fetch API</span>
+            <span class="duration">: 22:13</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.5. async / await</span>
+            <span class="duration">: 15:05</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.6. Mock</span>
+            <span class="duration">: 14:42</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.7. Promise.resolve() / Promise.reject()</span>
+            <span class="duration">: 4:13</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.8. Promise.all() / Promise.allSettled()</span>
+            <span class="duration">: 25:32</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.9. Макрозадачи (Macrotasks) + Микрозадачи (Microtasks) / Лайфхаки</span>
+            <span class="duration">: 23:23</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.10. Клиент-серверное взаимодействие и загрузка скриптов</span>
+            <span class="duration">: 10:27</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.11. HTTP-сообщения и CRUD-операции</span>
+            <span class="duration">: 17:19</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.12. CRUD-операции (практика на примере создания TODO-приложения)</span>
+            <span class="duration">: 38:47</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.13. HTTP-запросы в модулях (на примере TODO-приложения)</span>
+            <span class="duration">: 21:31</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.14. Расширение функционала TODO-APP</span>
+            <span class="duration">: 55:31</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.15. Разбивка на модули и рефакторинг TODO-APP</span>
+            <span class="duration">: 1:06:42</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.16. Создание базы данных Firebase</span>
+            <span class="duration">: 17:27</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.17. Firebase: Authentification</span>
+            <span class="duration">: 47:46</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.18. Аутентификация в Firebase: onAuthStateChanged, signOut,
+              GoogleAuthProvider,
+              сброс пароля</span>
+            <span class="duration">: 1:18:05</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.19. Обработка ошибок Fetch API</span>
+            <span class="duration">: 30:45</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 6.20. XMLHttpRequest</span>
+            <span class="duration">: 11:35</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Проект "Сайт прогноза погоды на JavaScript"</span>
+            <span class="duration">: 2:43:10</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 7.1. Что такое библиотека и как создать свою библиотеку</span>
+            <span class="duration">: 9:28</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 7.2. NPM - Node Package Manager</span>
+            <span class="duration">: 27:38</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 7.3. Модули (ES6 Modules + CommonJS)</span>
+            <span class="duration">: 38:19</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 7.4. Форматтеры (Prettier)</span>
+            <span class="duration">: 12:29</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 7.5. Линтеры + Линтеры CSS (ESlint + Stylelint)</span>
+            <span class="duration">: 20:34</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 7.6. Husky</span>
+            <span class="duration">: 7:27</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 7.7. Webpack</span>
+            <span class="duration">: 44:53</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 7.8. Библиотеки + lodash</span>
+            <span class="duration">: 21:31</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 7.9. Axios</span>
+            <span class="duration">: 57:39</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 7.10. IMask</span>
+            <span class="duration">: 21:01</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 7.11. Скролл - MoveTo</span>
+            <span class="duration">: 20:26</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 7.12. Ленивая загрузка - lazysizes</span>
+            <span class="duration">: 28:27</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 7.13. Анимации - Anime.js</span>
+            <span class="duration">: 15:32</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 8.1. Создание классов</span>
+            <span class="duration">: 19:42</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 8.2. Наследование классов</span>
+            <span class="duration">: 8:59</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 8.3. Статические свойства и методы</span>
+            <span class="duration">: 21:29</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 8.4. Переопределение свойств и методов</span>
+            <span class="duration">: 15:44</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+          <li>
+            <span class="lesson-title">Урок 8.5. Приватные свойства и методы</span>
+            <span class="duration">: длительность не указана</span>
+            <p class="description">Ваш пояснительный текст...</p>
+          </li>
+        </ol>
+
+
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
+  <!-- /main -->
 
-  <section class="block-section">
-    <div class="container">
-      <div class="row">
-        <h2 class="block-title">Урок 01 - Введение в JavaScript 21:24</h2>
-
-        <div class="block-content">
-          <p>Браузерние інтерфейси:</p>
-          <ul>
-            <li>
-              DOM - Document Object Model обектна медель документа, предназначен
-              для изменения страниц существуют такие обекти - документ
-              (содержимое страници), ивент - собития на странице,
-            </li>
-            <li>
-              BOM - Browser Object Model - обектная модель браузера, тоесть
-              набором дополнительних обектов, которие реализуют различние
-              интерфейси,и позводляют работать совсем, кроме документа
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container">
-    <h3 class="py-3">Homework-14</h3>
-    <div class="col-4">
-      <ul class="list-group">
-        <li class="list-group-item1">Item-1</li>
-        <li class="list-group-item">Item-1</li>
-        <li class="list-group-item">Item-1</li>
-        <li class="list-group-item">Item-1</li>
-        <li class="list-group-item">Item-1</li>
-        <li class="list-group-item">Item-1</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="container">
-    <h3 class="py-3">Homework-15</h3>
-    <div class="col-4">
-      <div id="card-4" class="card-4">
-        <div class="card-header">Top news</div>
-        <div class="card-body">
-          <h5 class="card-title" title="title">Title</h5>
-          <p class="card-text">Lorem, ipsum dolor.</p>
-          <a href="#" class="btn btn-primary" role="link">Read more</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="container">
-    <h2 class="title-t">lkjj j</h2>
-    <div class="alert alert-primary">Lorem, ipsum dolor.</div>
-    <div class="px-5 py-4 my-5">
-      <h3>Lorem, ipsum dolor.</h3>
-      <div class="col-6 mx-auto">
-        <p class="lead mb-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio illo
-          alias neque quae illum voluptatibus eum totam quibusdam magnam impedit
-          atque, corrupti reprehenderit, accusantium dolorum? Ipsum quisquam at
-          eum! Aliquam.
-        </p>
-        <div class="d-flex gap-2">
-          <button class="btn btn-primary">primary button</button>
-          <button class="btn btn-outline-secondary">secondary button</button>
-        </div>
-      </div>
-      <div class="alert alert-secondary">Lorem ipsum dolor sit amet.</div>
-      <div class="alert alert-tsesty">Lorem ipsum dolor sit amet.</div>
-      <div class="alert alert-fourty">Lorem ipsum dolor sit amet.</div>
-    </div>
-  </section>
-
-  <section class="container">
-    <h2>Lesson 18</h2>
-    <div class="row py-5">
-      <div class="col-7 d-flex">
-        <button
-          class="btn btn-primary px-3"
-          onclick="console.log('кликнув по кнопке Primary')"
-        >
-          Primary
-        </button>
-        <button class="btn btn-secondary px-3">Secondary</button>
-        <button class="btn btn-success px-3">Success</button>
-        <button class="btn btn-danger px-3">Danger</button>
-        <a href="#" class="btn btn-warning px-3">Warning</a>
-      </div>
-      <div class="col-5">
-        <form action="#" class="d-flex">
-          <input
-            type="search"
-            name="search"
-            class="form-control"
-            placeholder="Search"
-          />
-          <button type="submit" class="btn btn-outline-success">Search</button>
-        </form>
-      </div>
-    </div>
-  </section>
-  <section class="container">
-    <h2 class="py-4">Lesson 19</h2>
-    <div class="row">
-      <div class="col-6">
-        <table class="tadle" id="table">
-          <caption class="caption-top">
-            User List 1
-          </caption>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Fist</th>
-              <th>Last</th>
-              <th>Nick</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>1</th>
-              <th>Mark</th>
-              <th>Gray</th>
-              <th>@mark</th>
-            </tr>
-            <tr>
-              <th>2</th>
-              <th>Jake</th>
-              <th>Red</th>
-              <th>@jake</th>
-            </tr>
-            <tr>
-              <th>3</th>
-              <th>Mary</th>
-              <th>Brown</th>
-              <th>@mary</th>
-            </tr>
-          </tbody>
-        </table>
-        <div class="d-flex">
-          <button class="btn btn-primary mt-4 me-2">Get caption</button>
-          <button class="btn btn-primary mt-4 me-2">Get thead</button>
-        </div>
-      </div>
-      <div class="col-6">
-        <table class="tadle" id="table2">
-          <caption class="caption-top">
-            User List 1
-          </caption>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Fist</th>
-              <th>Last</th>
-              <th>Nick</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>1</th>
-              <th>Mark</th>
-              <th>Gray</th>
-              <th>@mark</th>
-            </tr>
-            <tr>
-              <th>2</th>
-              <th>Jake</th>
-              <th>Red</th>
-              <th>@jake</th>
-            </tr>
-            <tr>
-              <th>3</th>
-              <th>Mary</th>
-              <th>Brown</th>
-              <th>@mary</th>
-            </tr>
-          </tbody>
-        </table>
-        <div class="d-flex">
-          <button class="btn btn-primary mt-4 me-2">Enable tracking</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container">
-    <h2>Lesson 20</h2>
-    <div class="row">
-      <div class="col-4">
-        <ul class="list-group mb-4" id="list-1">
-          <li class="list-group-item">Item 1</li>
-          <li class="list-group-item">Item 2</li>
-          <li class="list-group-item">Item 3</li>
-          <li class="list-group-item">Item 4</li>
-          <li class="list-group-item">Item 5</li>
-        </ul>
-        <button class="btn btn-primary">Click me</button>
-        <button class="btn btn-secondary">Click + Shist</button>
-      </div>
-      <div class="col-4">
-        <ul class="list-group mb-4" id="list-2">
-          <li class="list-group-item bg-success-subtitle">Item 1</li>
-          <li class="list-group-item">Item 2</li>
-          <li class="list-group-item">Item 3</li>
-          <li class="list-group-item">Item 4</li>
-          <li class="list-group-item">Item 5</li>
-        </ul>
-        <button class="btn btn-success">Next</button>
-        <button class="btn btn-warning">Prev</button>
-      </div>
-
-      <div class="col-4">
-        <ul class="list-group mb-4" id="list-3">
-          <li class="list-group-item">Item 1</li>
-          <li class="list-group-item">Item 2</li>
-          <li class="list-group-item">Item 3</li>
-          <li class="list-group-item">Item 4</li>
-          <li class="list-group-item">Item 5</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="container">
-    <h2>Lesson 21</h2>
-    <div class="row">
-      <div class="col-4">
-        <form action="#" name="custome-form" class="cla">
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input
-              id="email"
-              type="email"
-              name="email"
-              class="form-control"
-              placeholder="Enter your email"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="username" class="form-label">Name</label>
-            <input
-              id="name"
-              type="text"
-              name="name"
-              class="form-control"
-              placeholder="Enter your name"
-            />
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Country</label>
-            <select id="country" class="form-control">
-              <option value="usa" selected></option>
-              <option value="usa">USA</option>
-              <option value="canada">CANADA</option>
-              <option value="europe">EUROPE</option>
-              <option value="japan">JAPANE</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <input
-              id="age"
-              type="checkbox"
-              name="age"
-              class="form-check-input"
-            />
-            <label for="age" class="form-check-label">I`m over 18</label>
-          </div>
-          <button class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section class="container">
-    <h2>Next Lesson</h2>
-    <div class="row">
-      <div class="col-4">
-        Введіть кількість кімнат в квартирі<br />
-        <div id="get-data">123</div>
-      </div>
-      <div class="col-4">
-        <br />
-        <div id="push-data"></div>
-      </div>
-      <div class="col-4">
-        <label for="cheese">Выберите вид сыра для пиццы: </label>
-        <select id="cheese">
-          <option value="">Оберіть вид сиру</option>
-          <option value="mozarella">Моцарелла</option>
-          <option value="filadelfia">Филадельфия</option>
-          <option value="chedder">Чеддер</option>
-          <option value="parmezan">Пармезан</option>
-          <option value="mramor">Мраморный</option>
-          <option value="dor-blue">Дор Блю</option>
-        </select>
-      </div>
-
-      <div class="col-4">
-        <p id="output"></p>
-      </div>
-
-      <div class="col-4">
-        <br />
-        <p>
-          <img
-            src="https://source.unsplash.com/vb2qWEax4pM/300x300"
-            alt="Choose fruit"
-            title="Choose fruit"
-            id="fruitImg"
-          />
-          <img
-            src="https://source.unsplash.com/POMpXtcVYHo/300x300"
-            alt="Choose fruit"
-            title="Choose fruit"
-            id="fruitImgObj"
-          />
-        </p>
-
-        <p>Выбор из:</p>
-        <label for="fruit">Введіть назву фрукта: </label>
-        <select id="fruit">
-          <option value="">Оберіть назву фрукта</option>
-          <option value="apple">Яблоко</option>
-          <option value="banana">Банан</option>
-          <option value="grape">Виноград</option>
-          <option value="kiwi">Киви</option>
-          <option value="peach">Персик</option>
-          <option value="pinapple">Ананас</option>
-          <option value="melon">Диня</option>
-          <option value="watermelon">Кавун</option>
-        </select>
-        <ul>
-          <li>- apple</li>
-          <li>- banana</li>
-          <li>- grape</li>
-          <li>- kiwi</li>
-          <li>- peach</li>
-          <li>- pinapple</li>
-          <li>- melon</li>
-          <li>- watermelon</li>
-        </ul>
-
-        <p>
-          <input
-            type="button"
-            onclick="chooseFruitImg()"
-            value="Выбрать фрукт (на англ.)"
-          />
-        </p>
-      </div>
-    </div>
-  </section>
-</main>
-<!-- /main -->
-
-
-
-<script src="js/scripts.min.js"></script>
-
+  <script src="js/scripts.min.js"></script>
 
 </body>
 
 </html>
-

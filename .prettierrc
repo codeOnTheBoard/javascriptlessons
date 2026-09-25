@@ -5,7 +5,7 @@
   "singleQuote": true,
   "jsxSingleQuote": false,
   "trailingComma": "es5",
-  "jsxBracketSameLine": false,
+  "bracketSameLine": false,
   "htmlWhitespaceSensitivity": "css",
   "bracketSpacing": true,
   "semi": true,

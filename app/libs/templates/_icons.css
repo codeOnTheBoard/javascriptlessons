@@ -9,15 +9,16 @@
 }
 
 .<%= cssClass %> {
+	font-weight: normal;
 	font-family: "<%= fontName %>";
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
 	font-style: normal;
 	font-variant: normal;
-	font-weight: normal;
+	text-transform: none;
+
 	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
 	text-decoration: none;
-	text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 }
 
 <% _.each(glyphs, function(glyph) { %>

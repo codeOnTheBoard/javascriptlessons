@@ -59,16 +59,16 @@
 /// @output psuedo content
 ///
 @mixin ae-pseudo($wedge, $height, $width) {
-  content: "";
-  left: 0;
-  right: 0;
   position: absolute;
+  right: 0;
+  left: 0;
   z-index: 1;
   width: 100%;
   height: $height * 1px;
   background-image: url($wedge);
-  background-position: center center;
   background-repeat: no-repeat;
+  background-position: center center;
+  content: "";
 
   // full width wedge - needed as Firefox ignores preserveAspectRatio="none" in this case
   @if ($width == null) {
@@ -102,7 +102,6 @@
   $fill-alpha: alpha($fill);
   $wedge: '<svg width="#{$width}" height="#{$height}" fill="#{$fill-rgb}" fill-opacity="#{$fill-alpha}"><polygon points="#{map-get($points, $hypotenuse)}"></polygon></svg>';
   $encoded-wedge: ae-svg-encode($wedge);
-
   position: relative;
 
   // full width wedge
@@ -122,29 +121,37 @@
 
   @if ($location == "inside top") {
     &::before {
-      @include ae-pseudo($encoded-wedge, $height, $width);
-
       top: 0;
+
+      @include ae-pseudo($encoded-wedge, $height, $width);
     }
-  } @else if ($location == "outside top") {
+  }
+
+ @else if ($location == "outside top") {
     &::before {
-      @include ae-pseudo($encoded-wedge, $height, $width);
-
       top: -$height * 1px;
-    }
-  } @else if ($location == "inside bottom") {
-    &::after {
-      @include ae-pseudo($encoded-wedge, $height, $width);
 
+      @include ae-pseudo($encoded-wedge, $height, $width);
+    }
+  }
+
+ @else if ($location == "inside bottom") {
+    &::after {
       bottom: 0;
-    }
-  } @else if ($location == "outside bottom") {
-    &::after {
-      @include ae-pseudo($encoded-wedge, $height, $width);
 
-      bottom: -$height * 1px;
+      @include ae-pseudo($encoded-wedge, $height, $width);
     }
-  } @else {
+  }
+
+ @else if ($location == "outside bottom") {
+    &::after {
+      bottom: -$height * 1px;
+
+      @include ae-pseudo($encoded-wedge, $height, $width);
+    }
+  }
+
+ @else {
     @error "Invalid argument for $location - must use: `inside top`, `outside top`, `inside bottom`, `outside bottom`";
   }
 

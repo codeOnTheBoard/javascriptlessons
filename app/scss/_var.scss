@@ -1,6 +1,5 @@
 // задать все переменные по умолчанию, менять но не удалять
 
-
 $body_fontsize: 16px;
 $body_lineheight: 1.42;
 $placeholdercolortext: #202020;
@@ -18,10 +17,9 @@ $body_color_text: #000000;
 
 @mixin font-face($name, $sanserif, $weight: null, $linebase: null, $fontsize:null) {
   $rsize: $fontsize / 16;
-
-  font-family: quote($name), $sanserif;
   font-weight: $weight;
   font-size: $rsize * 1rem;
+  font-family: quote($name), $sanserif;
   line-height: ($linebase / $fontsize );
 }
 
@@ -29,7 +27,6 @@ $body_color_text: #000000;
 
 @mixin fontsize-lineheight($lineheight, $fsize) {
   $rembase: $fsize / 16;
-
   font-size: $rembase * 1rem;
   line-height: $lineheight / $fsize;
 }
@@ -73,7 +70,6 @@ $body_color_text: #000000;
 // @include pxrem(548, 16);
 @mixin pxrem($width, $widthbase) {
   $lineheight: $width / $widthbase;
-
   width: $lineheight * 1rem;
 }
 
@@ -88,7 +84,6 @@ $body_color_text: #000000;
   -khtml-opacity: $p*0.01;
   -moz-opacity: $p*0.01;
   opacity: $p*0.01;
-  filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$p)";
   filter: alpha(opacity=$p);
 }
 
@@ -97,12 +92,6 @@ $body_color_text: #000000;
 // @include bg(#aaaaaa, #efefef);
 
 @mixin bg($top, $btm) {
-  background: $top;
-  background: linear-gradient(top, $top 0%, $btm 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, $top), color-stop(100%, $btm));
-  background: linear-gradient(top, $top 0%, $btm 100%);
-  background: linear-gradient(top, $top 0%, $btm 100%);
-  background: linear-gradient(top, $top 0%, $btm 100%);
   background: linear-gradient(to bottom, $top 0%, $btm 100%);
   filter: progid:dximagetransform.microsoft.gradient(startcolorstr="$top", endcolorstr="$btm", gradienttype=0);
 }

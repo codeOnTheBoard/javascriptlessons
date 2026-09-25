@@ -1,5 +1,24 @@
-/node_modules/
-/dist/
-/.git/
-/**/*.psd
-/**/Thumbs.db
+# Залежності та папки збірки
+node_modules/
+dist/
+dest/
+
+# Карти коду (sourcemaps — вони займають найбільше місця)
+*.map
+app/css/*.map
+app/js/*.map
+
+# Згенеровані файли (якщо вони автоматично збираються з SCSS)
+app/css/libs.min.css
+app/js/scripts.min.js
+
+# Дизайн-макети та системний сміттєвий кеш
+*.psd
+*.ai
+Thumbs.db
+.DS_Store
+*.log
+
+# Налаштування редакторів
+.vscode/
+.idea/

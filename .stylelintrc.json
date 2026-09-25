@@ -1,20 +1,27 @@
 {
-  "extends": [
-    "stylelint-config-standard",
-    "stylelint-prettier/recommended",
-    "stylelint-config-rational-order"
+  "customSyntax": "postcss-scss",
+  "extends": ["stylelint-config-standard"],
+  "plugins": [
+    "@stylistic/stylelint-plugin",
+    "stylelint-scss",
+    "stylelint-order"
   ],
-  "plugins": ["stylelint-scss", "stylelint-order", "stylelint-prettier"],
   "rules": {
-    "prettier/prettier": true,
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "except": ["first-nested"]
+      }
+    ],
+    "@stylistic/block-closing-brace-empty-line-before": "never",
+    "@stylistic/max-empty-lines": 1,
+
     "at-rule-no-unknown": null,
     "scss/at-rule-no-unknown": true,
     "selector-id-pattern": "[a-z]+",
     "color-no-invalid-hex": true,
-    "number-max-precision": 8,
     "font-family-no-duplicate-names": true,
     "function-calc-no-unspaced-operator": true,
-    "function-linear-gradient-no-nonstandard-direction": true,
     "string-no-newline": true,
     "unit-no-unknown": true,
     "import-notation": "string",
@@ -38,7 +45,6 @@
     "comment-no-empty": true,
     "no-empty-source": true,
     "no-unknown-animations": true,
-    "function-url-no-scheme-relative": true,
     "declaration-block-single-line-max-declarations": 1,
     "comment-word-disallowed-list": ["todo"],
     "color-hex-length": "long",
@@ -52,7 +58,6 @@
         "ignoreKeywords": ["A4"]
       }
     ],
-    "declaration-empty-line-before": "never",
     "declaration-property-unit-allowed-list": {
       "line-height": ["em", "px", "rem"]
     },
@@ -62,24 +67,6 @@
     "selector-attribute-quotes": "always",
     "selector-pseudo-element-colon-notation": "double",
     "selector-type-case": "lower",
-    "rule-empty-line-before": [
-      "always-multi-line",
-      {
-        "except": ["first-nested"]
-      }
-    ],
-    "at-rule-empty-line-before": [
-      "always",
-      {
-        "except": ["blockless-after-blockless", "first-nested"]
-      }
-    ],
-    "comment-empty-line-before": [
-      "always",
-      {
-        "except": ["first-nested"]
-      }
-    ],
     "comment-whitespace-inside": "always",
     "order/order": [
       "custom-properties",
@@ -93,13 +80,6 @@
         "name": "extend"
       },
       "rules"
-    ],
-    "plugin/rational-order": [
-      true,
-      {
-        "border-in-box-model": false,
-        "empty-line-between-groups": false
-      }
     ],
     "order/properties-order": [
       {

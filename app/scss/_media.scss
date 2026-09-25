@@ -1,148 +1,149 @@
 /* ==========  Desktop First  ========== */
-@media only screen and (max-width: 1440px) {
+
+@media only screen and (width <= 1440px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 1336px) {
+@media only screen and (width <= 1336px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (width <= 1280px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (width <= 1200px) {
   /* делать это разрешение */
 }
 
-@media screen and (max-width: 1080px) {
+@media screen and (width <= 1080px) {
   /* делать это разрешение */
 }
 
 /* первое разрешение под казачика */
-@media only screen and (max-width: 1024px) {
+
+@media only screen and (width <= 1024px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (width <= 992px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (width <= 980px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 834px) {
+@media only screen and (width <= 834px) {
   /* не обьязательно делать это разрешение */
 }
 
-@media only screen and (max-width: 815px) {
+@media only screen and (width <= 815px) {
   /* не обьязательно делать это разрешение */
 }
 
-@media only screen and (max-width: 812px) {
+@media only screen and (width <= 812px) {
   /* не обьязательно делать это разрешение */
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (width <= 800px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (width <= 768px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 740px) {
+@media only screen and (width <= 740px) {
   /* не обьязательно делать это разрешение */
 }
 
-@media only screen and (max-width: 736px) {
+@media only screen and (width <= 736px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 734px) {
+@media only screen and (width <= 734px) {
   /* не обьязательно делать это разрешение */
 }
 
-@media only screen and (max-width: 684px) {
+@media only screen and (width <= 684px) {
   /* не обьязательно делать это разрешение */
 }
 
-@media only screen and (max-width: 667px) {
+@media only screen and (width <= 667px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (width <= 640px) {
   /* не обьязательно делать это разрешение */
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (width <= 600px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 568px) {
+@media only screen and (width <= 568px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (width <= 480px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (width <= 425px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (width <= 414px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 412px) {
+@media only screen and (width <= 412px) {
   /* не обьязательно делать это разрешение */
 }
 
-@media only screen and (max-width: 387px) {
+@media only screen and (width <= 387px) {
   /* не обьязательно делать это разрешение */
 }
 
-@media only screen and (max-width: 384px) {
+@media only screen and (width <= 384px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (width <= 375px) {
   /* не обьязательно делать это разрешение */
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (width <= 360px) {
   /* делать это разрешение */
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (width <= 320px) {
   /* делать это разрешение */
 }
-
-
 
 /* ==========  Mobile First  ========== */
 
-
-
-
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
+
+@media (width >= 576px) {
 
 }
 
 /* Medium devices (tablets, 768px and up)  */
-@media (min-width: 768px) {
+
+@media (width >= 768px) {
 
 }
 
 /* Large devices (desktops, 992px and up)  */
-@media (min-width: 992px) {
+
+@media (width >= 992px) {
 
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
+
+@media (width >= 1200px) {
 
 }

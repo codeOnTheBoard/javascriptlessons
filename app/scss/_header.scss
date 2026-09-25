@@ -1,5 +1,4 @@
-.header-fon,
-.header-row {
+.header-fon, .header-row {
   min-height: 500px;
   background: #d9d7d0;
 }
@@ -14,7 +13,7 @@
   display: inline-block;
   margin-bottom: 40px;
   color: #000000;
-  font-size: 40px;
+  font-size: 50px;
   text-align: center;
 }
 
@@ -49,3 +48,58 @@
   width: 33%;
   border: 1px solid #000000;
 }
+
+.podd {
+  margin-top: 50px;
+}
+
+.podd-marg {
+  margin-bottom: 40px;
+  font-size: 30px;
+}
+
+.row1 ul {
+  padding-left: 20px;
+  list-style: none;
+
+  & li {
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+}
+
+.opis {
+  color:red;
+}
+
+ol.course-list {
+            padding-top: 40px;
+            padding-left: 20px;
+            }
+
+        ol.course-list li {
+            padding-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .lesson-title {
+          display: inline-block;
+          margin-bottom: 5px;
+          color: #1a73e8;
+        }
+
+        .duration {
+            color: #666666;
+            font-weight: normal;
+            font-size: 0.9em;
+        }
+
+        .description {
+            margin: 5px 0 0;
+            padding: 8px 12px;
+            color: #555555;
+            font-weight: normal;
+            background-color: #ffffff;
+            border-left: 3px solid #1a73e8;
+            border-radius: 4px;
+        }
