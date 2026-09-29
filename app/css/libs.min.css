@@ -76,7 +76,7 @@ body input:focus:required:invalid,body textarea:focus:required:invalid{border-co
 .row1 ul li{margin-bottom:5px;font-size:20px}
 .opis{color:red}
 ol.course-list{padding-top:40px;padding-left:20px}
-ol.course-list li{padding-bottom:10px;font-weight:700}
+ol.course-list li{padding-bottom:10px}
 .lesson-title{display:inline-block;margin-bottom:5px;color:#1a73e8}
 .duration{color:#666;font-weight:400;font-size:.9em}
 .description{margin:5px 0 0;padding:8px 12px;color:#555;font-weight:400;background-color:#fff;border-left:3px solid #1a73e8;border-radius:4px}
